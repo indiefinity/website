@@ -1,2 +1,4 @@
 html,
-font-family: 'Sniglet', cursive;
+html{
+	font-family: 'Sniglet', cursive;
+}
