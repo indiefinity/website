@@ -1,3 +1,4 @@
 https://dori.netlify.com/* https://sivume.ga/:splat 301!
 https://www.sivume.ga/* https://sivumega/:splat 200!
-https://:sub.sivume.ga/* https://sivume.ga/:sub/:splat 200!
+https://salainen.sivume.ga/* https://sivume.ga/salainen/:splat 200!
+:subdom.sivume.ga/* sivume.ga/:subdom/:splat 200!
