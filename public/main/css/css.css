@@ -2,6 +2,6 @@ html,
 html{
 	font-family: 'Sniglet', cursive;
 }
-p.a{
+html.a{
 	color: green;
 }
