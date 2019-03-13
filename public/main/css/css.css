@@ -2,6 +2,9 @@ html,
 html{
 	font-family: 'Sniglet', cursive;
 }
-html.a{
+a.visited{
+	color: green;
+}
+a {
 	color: green;
 }
