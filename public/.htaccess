@@ -1,3 +1,0 @@
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^salainen\.sivume\.ga$ [NC] 
-RewriteRule ^((?!salainen/).*)$ /salainen/$1¨
