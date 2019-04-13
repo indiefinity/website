@@ -1,11 +1,12 @@
 <html>
 <body>
-<input type="password" id="sala"><input type="button" onclick="pass(document.getElementById('sala').value)" value="ABCABCABCABC">
+<input type="password" id="sala"><input type="button" onclick="pass(document.getElementById('sala').value)" value="Laita">
+<p id="uusi">
 <body>
 <script>
 function pass(input) {
 	if (input == "salasana") {
-		alert("ding ding ding!");
+		document.getElementById('uusi').innerHTML = "SAIT OIKEIN!";
 	}
 }
 </script>
