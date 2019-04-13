@@ -5,8 +5,14 @@
 </head>
 <body>
     <h1>Täsä on peli. Katso console!</h1>
+    <input type="password" id="sala"><input type="button" onclick="pass(document.getElementById('sala').value)" value="Jatka">
 </body>
 </html>
 <script type="text/javascript">
-    console.log('Laita reikään "Harambe" ja paina "jatka"');
+    console.log('Laita boxiin "harambe" ja paina "Jatka"')
+    function pass(input) {
+        if (input == "harambe") {
+            alert("You vanishd all your oponents");
+        }
+    }
 </script>
