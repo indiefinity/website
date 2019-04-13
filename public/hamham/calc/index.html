@@ -1,0 +1,149 @@
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+
+  <title>HTML Laskin</title>
+  <meta name="description" content="HTML laskin">
+  <meta name="author" content="Ville Kastell">
+<link rel="favicon" href="https://vxds.tk/favicon.ico">
+  <link rel="stylesheet" href="https://vxds.tk/ferinium/ferinium2.css">
+
+</head>
+
+<body>
+<h1>HTML Laskin</h1>
+<div id="result"><p id="resulttext">0</p> </div>
+<input type="button" value="1" onclick="fir(1)">
+<input type="button" value="2" onclick="fir(2)">
+<input type="button" value="3" onclick="fir(3)"> <input type="button" value="+" onclick="plus()"> <br>
+<input type="button" value="4" onclick="fir(4)"> 
+<input type="button" value="5" onclick="fir(5)">
+<input type="button" value="6" onclick="fir(6)"> <input type="button" value="x" onclick="multi()"> <br>
+<input type="button" value="7" onclick="fir(7)">
+<input type="button" value="8" onclick="fir(8)">
+<input type="button" value="9" onclick="fir(9)"> <input type="button" value="/" onclick="divi()"> <br>
+<input type="button" value="=" onclick="calcresu()"> 
+<input type="button" value="0" onclick="fir(0)">
+<input type="button" value="C" onclick="C()"> 
+<input type="button" value="(" onclick="barl()"> <br>
+<input type="button" value=")" onclick="barr()"> 
+<input type="button" value="-" onclick="minus()"> 
+<input type="button" value="backspace" onclick="backs()"> 
+  <script type="text/javascript">
+  
+  
+  window.varplus
+
+  window.result;
+  result = "";
+  window.var1
+var1  = 0
+window.last
+window.res
+res = true
+function calcresu() {
+last = document.getElementById('resulttext').innerHTML;
+if (last == "1+1") {
+document.getElementById('resulttext').innerHTML = Math.floor((Math.random() * 100000) + 1);;
+} else {
+res = true
+document.getElementById('resulttext').innerHTML = (last + " = " + eval(last));
+}
+}
+function plus() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = "+";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+
+function multi() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = "*";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+function divi() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = "/";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+function minus() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = "-";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+function barl() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = "(";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+function barr() {
+if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+varplus = ")";
+orig  = document.getElementById("resulttext").innerHTML;
+var1  = orig + varplus;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+ 
+  function  fir(val1) {
+  if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+  last = val1;
+  window.orig
+orig  = document.getElementById("resulttext").innerHTML;
+  window.var1
+var1  = orig + val1;
+ document.getElementById("resulttext").innerHTML = var1;
+ }
+ function C() {
+ if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+ var1 = "";
+ document.getElementById("resulttext").innerHTML = var1;
+  }
+  function backs() {
+ if (res == true){
+document.getElementById('resulttext').innerHTML = "";
+res = false
+}
+ var str = document.getElementById("resulttext").innerHTML;
+str = str.substring(0, str.length - 1); // "12345.0"
+var1 = str;
+document.getElementById("resulttext").innerHTML = var1;
+  }
+  console.log("CCD!")
+  </script>
+  
+</body>
+</html>
