@@ -5,13 +5,13 @@
 </head>
 <body>
     <h1>Täsä on peli. Katso console!</h1>
-    <input type="password" id="sala"><input type="button" onclick="pass(document.getElementById('sala').value)" value="Jatka">
+    <input type="text" id="boxi"><input type="button" onclick="katso('boxi')" value="Jatka">
 </body>
 </html>
 <script type="text/javascript">
     console.log('Laita boxiin "harambe" ja paina "Jatka"')
-    function pass(input) {
-        if (input == "harambe") {
+    function katso(id) {
+        if (document.getElementById(id).value == "harambe") {
             alert('Hyvä, olet paras!');
         }
         else {
