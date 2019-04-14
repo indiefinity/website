@@ -1,14 +1,16 @@
-var left = 100;
 var hit = new Audio("hit.mp3");
-var yip = new Audio("yipii.mp3");
+var hit2 = new Audio("hit2.mp3");
+var hit3 = new Audio("hit3.mp3");
+var ran;
 function fuu() {
-    if (left <= 1) {
-        document.getElementById('pepe').innerHTML = 'yipii';
-        yip.play()
+    ran = Math.floor(Math.random() * 3); 
+    if (ran = 0) {
+        hit.play()
     }
-    else {
-        hit.play();
-        left = left - 1;
-        document.getElementById('pepe').innerHTML = left;
+    else if (ran = 1) {
+        hit2.play()
+    }
+    else if (ran = 2) {
+        hit3.play()
     }
 }
