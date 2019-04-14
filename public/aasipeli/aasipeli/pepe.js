@@ -1,4 +1,4 @@
-console.log("1")
+console.log("2")
 function syö() {
     c("aasi", "!==!* |||")
     setTimeout(function(){
