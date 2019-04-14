@@ -1,9 +1,10 @@
-var left = 1000
-var bohe = new Audio("bohe.mp3")
+var left = 1000;
+var bohe = new Audio("hit.mp3");
 function fuu() {
-    left = left - 1
+    bohe.play();
+    left = left - 1;
     document.getElementById('pepe').innerHTML = left;
     if (left < 0) {
-        bohe.play()
+        document.getElementById('pepe').innerHTML = 'yipii';
     }
 }
