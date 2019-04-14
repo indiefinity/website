@@ -1,21 +1,24 @@
 function syö() {
-    alert("syö")
-    sleep(0.1)
-    document.getElementById('aasi').innerHTML = "one eternity later"
+    c(aasi, "!==!* |||")
+    sleep(0.5);
+    c(aasi, " !==!o.||"
 }
 function juo() {
-    alert("juo")
+    alert("juo");
 }
 function nuku() {
-    alert("nuku")
+    alert("nuku");
 }
 function juokse() {
-    alert("juokse")
+    alert("juokse");
 }
 function perseile() {
-    alert("paskanna")
+    alert("paskanna");
 }
 function sleep(seconds){
     var waitUntil = new Date().getTime() + seconds*1000;
     while(new Date().getTime() < waitUntil) true;
+}
+function c(id, new) {
+    document.getElementById(id).innerHTML = new;
 }
