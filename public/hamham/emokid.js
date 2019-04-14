@@ -1,9 +1,12 @@
 console.log('Laita boxiin "harambe" ja paina "Jatka"')
-    function katso(id) {
-        if (document.getElementById(id).value == 'harambe') {
-            document.getElementById('teksti').innerHTML = "Hyvä"
-        }
-        else {
-            document.getElementById('teksti').innerHTML = "Olet nolla"
-        }
+function muuta(id, teksti) {
+    document.getElementById(id).innerHTML = teksti
+}
+function katso(id) {
+    if (document.getElementById(id).value == 'harambe') {
+        muuta(id, "Hyvä, olet paras!")
     }
+    else {
+        muuta(id, "Buu, olet nolla!")
+    }
+}
