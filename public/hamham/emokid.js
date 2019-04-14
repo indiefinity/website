@@ -1,6 +1,5 @@
-function katso(id) {
-    var lol = document.getElementById(id).value;
-    if (lol == 'egg') {
+function check(id) {
+    if (document.getElementById(id).value == 'egg') {
         document.getElementById('pepe').innerHTML = 'Wah?';
     }
 }
