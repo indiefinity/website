@@ -4,9 +4,9 @@ function muuta(id, teksti) {
 }
 function katso(id) {
     if (document.getElementById(id).value == 'harambe') {
-        muuta(id, "Hyvä, olet paras!")
+        muuta(teksti, "Hyvä, olet paras!")
     }
     else {
-        muuta(id, "Buu, olet nolla!")
+        muuta(téksti, "Buu, olet nolla!")
     }
 }
