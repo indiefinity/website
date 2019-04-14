@@ -1,8 +1,8 @@
-function check(id) {
+while (true) {
     if (document.getElementById(id).value == 'egg') {
-        document.getElementById('pepe').innerHTML = 'EEEEEGGGGGGGGG';
+        document.getElementById(id).innerHTML = 'EGG';
     }
     else {
-        document.getElementById('pepe').innerHTML = '';
+        document.getElementById(id).innerHTML = '';
     }
 }
