@@ -1,9 +1,10 @@
 console.log("8")
 var meetvurst = new Audio("jo.mp3");
-var ruoka = 0
+var ruoka = document.cookie(ruoka)
 c("ruoka", "ruoka: 0")
 function syö() {
     ruoka = ruoka + 1
+    document.cookie = "ruoka=" + ruoka
     if (ruoka > 99) {
         meetvurst.play()
         console.log(":)")
