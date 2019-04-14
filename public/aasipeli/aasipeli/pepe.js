@@ -1,7 +1,9 @@
 function syö() {
     c("aasi", "!==!* |||")
-    sleep(1);
-    c("aasi", " !==!o.||")
+    setTimeout(function(){
+        c("aasi", " !==!o.||")
+    }, 500);
+    
 }
 function juo() {
     alert("juo");
@@ -14,10 +16,6 @@ function juokse() {
 }
 function perseile() {
     alert("paskanna");
-}
-function sleep(seconds){
-    var waitUntil = new Date().getTime() + seconds*1000;
-    while(new Date().getTime() < waitUntil) true;
 }
 function c(id, text) {
     document.getElementById(id).innerHTML = text;
