@@ -6,6 +6,7 @@ function syö() {
     ruoka = ruoka + 1
     if (ruoka > 99) {
         meetvurst.play()
+        console.log(":)")
     }
     c("ruoka", "ruoka: " + ruoka)
     c("aasi", "!==!* |||")
