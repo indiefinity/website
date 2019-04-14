@@ -1,8 +1,12 @@
 console.log("7")
+var meetvurst = new Audio("file.wav");
 var ruoka = 0
 c("ruoka", "ruoka: 0")
 function syö() {
     ruoka = ruoka + 1
+    if (ruoka > 99) {
+        meetvurst.play()
+    }
     c("ruoka", "ruoka: " + ruoka)
     c("aasi", "!==!* |||")
     setTimeout(function(){
