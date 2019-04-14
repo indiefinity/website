@@ -7,12 +7,14 @@ function homoile(id) {
     if (homo == 'eat') {
         setTimeout(function () {
             document.getElementById('pepe').innerHTML = '!==!*IIII';
+            setTimeout(function () {
+                document.getElementById('pepe').innerHTML = ' !==!*III';
+                setTimeout(function () {
+                    document.getElementById('pepe').innerHTML = '  !==!*II';
+                }, 500);
+            }, 500);
         }, 500);
-        setTimeout(function () {
-            document.getElementById('pepe').innerHTML =  ' !==!*III';
-        }, 500);
-        setTimeout(function () {
-            document.getElementById('pepe').innerHTML =  '  !==!*II';
-        }, 500);
+        
+        
     }
 }
