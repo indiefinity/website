@@ -1,5 +1,8 @@
 function syö() {
     alert("syö")
+setTimeout(function(){
+    document.getElementById('aasi').innerHTML = "one eternity later"
+}, 10000);
 }
 function juo() {
     alert("juo")
