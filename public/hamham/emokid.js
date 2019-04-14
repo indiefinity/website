@@ -6,11 +6,14 @@ function homoile(id) {
     var homo = document.getElementById(id).value;
     if (homo == 'eat') {
         setTimeout(function () {
-            document.getElementById('pepe').innerHTML = '!==!*IIII';
+            document.getElementById('pepe').innerHTML = '|!==!*IIII';
             setTimeout(function () {
-                document.getElementById('pepe').innerHTML = ' !==!*III';
+                document.getElementById('pepe').innerHTML = '| !==!*III';
                 setTimeout(function () {
-                    document.getElementById('pepe').innerHTML = '  !==!*II';
+                    document.getElementById('pepe').innerHTML = '|  !==!*II';
+                    setTimeout(function () {
+                        document.getElementById('pepe').innerHTML = '|   !==!*I';
+                    }, 500);
                 }, 500);
             }, 500);
         }, 500);
