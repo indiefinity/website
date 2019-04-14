@@ -1,4 +1,4 @@
-var left = 100
+var left = 1000
 var bohe = new Audio("bohe.mp3")
 function fuu() {
     left = left - 1
