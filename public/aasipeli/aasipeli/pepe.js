@@ -1,5 +1,9 @@
-console.log("3")
+console.log("5")
+window.ruoka
+c("ruoka", "ruoka: 0")
 function syö() {
+    ruoka = ruoka + 1
+    c("ruoka", "ruoka: ", ruoka)
     c("aasi", "!==!* |||")
     setTimeout(function(){
         c("aasi", "&nbsp;!==!o.||")
