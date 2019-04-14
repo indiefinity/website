@@ -5,7 +5,7 @@ function syö() {
     }, 500);
     setTimeout(function(){
         c("aasi", "  !==!o.|")
-    }, 500);
+    }, 1000);
 }
 function juo() {
     alert("juo");
