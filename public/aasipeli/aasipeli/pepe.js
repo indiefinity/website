@@ -6,6 +6,15 @@ function syö() {
     setTimeout(function(){
         c("aasi", "  !==!o.|")
     }, 1000);
+    setTimeout(function(){
+        c("aasi", "   !==!o.")
+    }, 1500);
+    setTimeout(function(){
+        c("aasi", "!==!*")
+    }, 2000);
+    setTimeout(function(){
+        c("aasi", "")
+    }, 2500);
 }
 function juo() {
     alert("juo");
