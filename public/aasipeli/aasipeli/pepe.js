@@ -1,6 +1,6 @@
 function syö() {
     c("aasi", "!==!* |||")
-    sleep(0.5);
+    sleep(1);
     c("aasi", " !==!o.||")
 }
 function juo() {
