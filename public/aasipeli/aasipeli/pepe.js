@@ -13,6 +13,3 @@ function juokse() {
 function perseile() {
     alert("paskanna")
 }
-function wait(time) {
-    await sleep(time)
-}
