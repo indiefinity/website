@@ -1,12 +1,10 @@
-console.log('Laita boxiin "harambe" ja paina "Jatka"')
-function muuta(id, teksti) {
-    document.getElementById(id).innerHTML = teksti
-}
+console.log('harambe"');
+
 function katso(id) {
     if (document.getElementById(id).value == 'harambe') {
-        muuta(teksti, "Hyvä, olet paras!")
+        document.getElementById(teksti).innerHTML = 'guud';
     }
     else {
-        muuta(teksti, "Buu, olet nolla!")
+        document.getElementById(teksti).innerHTML = 'baad';
     }
 }
