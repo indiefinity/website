@@ -4,7 +4,7 @@ function muuta(id, teksti) {
 }
 function katso(id) {
     if (document.getElementById(id).value == 'harambe') {
-        muuta(teksti, "Hyv‰, olet paras!")
+        muuta(teksti, "Hyv√§, olet paras!")
     }
     else {
         muuta(teksti, "Buu, olet nolla!")
