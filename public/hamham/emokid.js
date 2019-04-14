@@ -1,8 +1,8 @@
 while (true) {
     if (document.getElementById(box).value == 'egg') {
-        document.getElementById(box).innerHTML = 'EGG';
+        document.getElementById(pepe).innerHTML = 'EGG';
     }
     else {
-        document.getElementById(box).innerHTML = '';
+        document.getElementById(pepe).innerHTML = '';
     }
 }
