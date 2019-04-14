@@ -1,8 +1,7 @@
 function syö() {
     alert("syö")
-setTimeout(function(){
+    sleep(2)
     document.getElementById('aasi').innerHTML = "one eternity later"
-}, 10000);
 }
 function juo() {
     alert("juo")
@@ -15,4 +14,8 @@ function juokse() {
 }
 function perseile() {
     alert("paskanna")
+}
+function sleep(seconds){
+    var waitUntil = new Date().getTime() + seconds*1000;
+    while(new Date().getTime() < waitUntil) true;
 }
