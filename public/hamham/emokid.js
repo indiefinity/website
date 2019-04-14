@@ -23,6 +23,9 @@ function homoile(id) {
                                         document.getElementById('pepe').innerHTML = '&nbsp;&nbsp;&nbsp;!==!o.';
                                         setTimeout(function () {
                                             document.getElementById('pepe').innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;!==!*';
+                                            setTimeout(function () {
+                                                document.getElementById('pepe').innerHTML = '';
+                                            }, 500);
                                         }, 500);
                                     }, 500);
                                 }, 500);
