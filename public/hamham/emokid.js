@@ -1,6 +1,6 @@
-function check(id) {
-    if (document.getElementById(id).value == 'egg') {
-        document.getElementById('pepe').innerHTML = 'EEEEEGGGGGGGGG';
+while (true) {
+    if (document.getElementById('box').value == 'egg') {
+        document.getElementById('pepe').innerHTML = 'EGG';
     }
     else {
         document.getElementById('pepe').innerHTML = '';
