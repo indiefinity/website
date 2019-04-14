@@ -4,10 +4,19 @@
     <link rel="stylesheet" type="text/css" href="./css.css">
     <meta charset="utf-8">
     <title>Hamham</title>
-    <script type="text/javascript" src="https://hamham.tk/emokid.js"></script>
 </head>
 <body>
     <input type="text" id="box">
     <p id="pepe"></p>
 </body>
 </html>
+<script>
+while (true) {
+    if (document.getElementById('box').value == 'egg') {
+        document.getElementById('pepe').innerHTML = 'EGG';
+    }
+    else {
+        document.getElementById('pepe').innerHTML = '';
+    }
+}
+</script>
