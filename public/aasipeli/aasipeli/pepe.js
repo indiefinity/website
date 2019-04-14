@@ -9,12 +9,12 @@ function syö() {
         console.log(":)")
     }
     c("ruoka", "ruoka: " + ruoka)
-    c("aasi", "!==!* |||")
+    c("aasi", "!==!* III")
     setTimeout(function(){
-        c("aasi", "&nbsp;!==!o.||")
+        c("aasi", "&nbsp;!==!o.II")
     }, 500);
     setTimeout(function(){
-        c("aasi", "&nbsp;&nbsp;!==!o.|")
+        c("aasi", "&nbsp;&nbsp;!==!o.I")
     }, 1000);
     setTimeout(function(){
         c("aasi", "&nbsp;&nbsp;&nbsp;!==!o.")
