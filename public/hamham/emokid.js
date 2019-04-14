@@ -7,6 +7,6 @@ function katso(id) {
         muuta(teksti, "Hyvä, olet paras!")
     }
     else {
-        muuta(téksti, "Buu, olet nolla!")
+        muuta(teksti, "Buu, olet nolla!")
     }
 }
