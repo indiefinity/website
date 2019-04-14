@@ -1,6 +1,6 @@
 function syö() {
     alert("syö")
-    sleep(2)
+    sleep(0.1)
     document.getElementById('aasi').innerHTML = "one eternity later"
 }
 function juo() {
