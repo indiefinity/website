@@ -1,5 +1,5 @@
-console.log("7")
-var meetvurst = new Audio("file.wav");
+console.log("8")
+var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 c("ruoka", "ruoka: 0")
 function syö() {
