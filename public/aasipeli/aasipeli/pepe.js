@@ -1,5 +1,5 @@
-console.log("6")
-var ruoka
+console.log("7")
+var ruoka = 0
 c("ruoka", "ruoka: 0")
 function syö() {
     ruoka = ruoka + 1
