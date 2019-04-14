@@ -1,16 +1,15 @@
-function sleep(ms) {
-    var waitUntil = new Date().getTime() + ms;
+function sleep(seconds) {
+    var waitUntil = new Date().getTime() + seconds * 1000;
     while (new Date().getTime() < waitUntil) true;
 }
 function homoile(id) {
     var homo = document.getElementById(id).value;
-    if (homo == "syö") {
+    if (homo == "syu") {
         document.getElementById('pepe').innerHTML = '!==!*IIII';
-        sleep(500);
-        document.getElementById('pepe').innerHTML = '!==!*III';
-        sleep(500);
-        document.getElementById('pepe').innerHTML = '!==!*II';
-        sleep(500);
-        
+        sleep(0, 5);
+        document.getElementById('pepe').innerHTML = ' !==!*III';
+        sleep(0, 5);
+        document.getElementById('pepe').innerHTML = '  !==!*II';
+        sleep(0, 5);
     }
 }
