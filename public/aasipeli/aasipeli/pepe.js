@@ -3,7 +3,9 @@ function syö() {
     setTimeout(function(){
         c("aasi", " !==!o.||")
     }, 500);
-    
+    setTimeout(function(){
+        c("aasi", "  !==!o.|")
+    }, 500);
 }
 function juo() {
     alert("juo");
