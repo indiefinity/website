@@ -1,13 +1,13 @@
 function syö() {
     c("aasi", "!==!* |||")
     setTimeout(function(){
-        c("aasi", " !==!o.||")
+        c("aasi", "&nbsp;!==!o.||")
     }, 500);
     setTimeout(function(){
-        c("aasi", "  !==!o.|")
+        c("aasi", "&nbsp;&nbsp;!==!o.|")
     }, 1000);
     setTimeout(function(){
-        c("aasi", "   !==!o.")
+        c("aasi", "&nbsp;&nbsp;&nbsp;!==!o.")
     }, 1500);
     setTimeout(function(){
         c("aasi", "!==!*")
