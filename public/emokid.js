@@ -1,12 +1,12 @@
-function muokkaaPepe(miksi) {
-    document.getElementById('pepe').innerHTML = miksi;
-}
+var left = 101;
+var yipii = new Audio("yipii.mp3")
 function fuu() {
-    var inp = document.getElementById('box').value;
-    if (inp == 'kakka') {
-        muokkaaPepe('Tykk‰‰n sinusta');
+    if (left <= 1) {
+        yipii.play()
+        document.getElementById('pepe').innerHTML = 'good';
     }
-    else if (inp == 'egg') {
-        muokkaaPepe('EGG');
+    else {
+        left--;
+        document.getElementById('pepe').innerHTML = left;
     }
 }
