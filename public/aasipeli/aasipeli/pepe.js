@@ -47,6 +47,9 @@ function perseile() {
         N.play()
         c("aasi", "Rikoit auton. Maksa 1€")
         // Add a button that pays 1€
+        setTimeout(function(){
+            c("aasi", "!==!*")
+        }, 1500);
     }
 }
 function c(id, text) {
