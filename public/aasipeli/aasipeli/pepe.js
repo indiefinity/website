@@ -33,6 +33,7 @@ function juokse() {
     alert("juokse");
 }
 function perseile() {
+    console.log(RanInt(1, 3))
     if (RanInt(1, 3) == 1) {
         var N = new Audio("./ovi.mp3")
         N.play()
