@@ -2,3 +2,6 @@ html,
 html {
     font-family: ubuntu;
 }
+#output {
+    border:1px solid black;
+}
