@@ -22,9 +22,6 @@ function syö() {
     setTimeout(function(){
         c("aasi", "!==!*")
     }, 2000);
-    setTimeout(function(){
-        c("aasi", "")
-    }, 2500);
 }
 function juo() {
     alert("juo");
