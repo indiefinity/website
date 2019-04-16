@@ -33,8 +33,24 @@ function juokse() {
     alert("juokse");
 }
 function perseile() {
-    alert("paskanna");
+    if (RanInt(1, 3) == 1) {
+        var N = new Audio("./ovi.mp3")
+        N.play()
+    }
+    if (RanInt(1, 3) == 2) {
+        var N = new Audio("./nappi.mp3")
+        N.play()
+    }
+    if (RanInt(1, 3) == 3) {
+        var N = new Audio("./auto.mp3")
+        N.play()
+        c("aasi", "Rikoit auton. Maksa 1€")
+        // Add a button that pays 1€
+    }
 }
 function c(id, text) {
     document.getElementById(id).innerHTML = text;
+}
+function RanInt (min, max) {
+    return Math.random() * (max - min) + min;
 }
