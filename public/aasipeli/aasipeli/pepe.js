@@ -34,15 +34,15 @@ function juokse() {
 }
 function perseile() {
     console.log(RanInt(1, 3))
-    if (RanInt(1, 3) == 1) {
+    if (Math.round(RanInt(1, 3)) == 1) {
         var N = new Audio("./ovi.mp3")
         N.play()
     }
-    if (RanInt(1, 3) == 2) {
+    if (Math.round(RanInt(1, 3)) == 2) {
         var N = new Audio("./nappi.mp3")
         N.play()
     }
-    if (RanInt(1, 3) == 3) {
+    if (Math.round(RanInt(1, 3)) == 3) {
         var N = new Audio("./auto.mp3")
         N.play()
         c("aasi", "Rikoit auton. Maksa 1€")
