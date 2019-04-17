@@ -43,7 +43,8 @@ function perseile() {
         N.play()
     }
     if (Math.round(RanInt(1, 3)) == 3) {
-        var N = new Audio("./kurkku.mp3")
+        var N = new Audio("./auto.mp3")
+        N.volume = 0.4
         N.play()
         c("aasi", "Rikoit auton. Maksa 1€")
         // Add a button that pays 1€
