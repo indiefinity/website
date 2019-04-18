@@ -37,6 +37,9 @@ function juokse() {
 }
 function maksa() {
     maksu.style.display = "none"
+    setTimeout(function(){
+        c("aasi", "!==!*")
+    }, 1000);
 }
 function perseile() {
     console.log(RanInt(1, 3))
@@ -54,9 +57,6 @@ function perseile() {
         N.play()
         c("aasi", "Rikoit auton. Maksa 1€")
         maksu.style.display = "block"
-        setTimeout(function(){
-            c("aasi", "!==!*")
-        }, 1500);
     }
 }
 function c(id, text) {
