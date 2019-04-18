@@ -5,3 +5,7 @@ html {
 #output {
     border:1px solid black;
 }
+#buttons {
+    border:2px solid black;
+    max-width:20%;
+}
