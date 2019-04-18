@@ -35,6 +35,9 @@ function nuku() {
 function juokse() {
     alert("juokse");
 }
+function maksa() {
+    maksu.style.display = "none"
+}
 function perseile() {
     console.log(RanInt(1, 3))
     if (Math.round(RanInt(1, 3)) == 1) {
