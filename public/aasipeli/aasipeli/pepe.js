@@ -1,6 +1,9 @@
 console.log("8")
 var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
+aasi = document.getElementById('aasi')
+maksu = document.getElementById('maksu')
+maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
 function syö() {
     ruoka = ruoka + 1
@@ -47,7 +50,7 @@ function perseile() {
         N.volume = 0.4
         N.play()
         c("aasi", "Rikoit auton. Maksa 1€")
-        // Add a button that pays 1€
+        maksu.style.display = "block"
         setTimeout(function(){
             c("aasi", "!==!*")
         }, 1500);
