@@ -2,6 +2,9 @@ html,
 html {
     font-family: pacifico;
 }
+h2 {
+    font-family: pacifico;
+}
 #output {
     border:1px solid black;
 }
