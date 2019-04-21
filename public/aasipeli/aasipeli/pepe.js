@@ -51,12 +51,18 @@ function perseile() {
     if (Math.round(RanInt(1, 3)) == 2) {
         var N = new Audio("./nappi.mp3")
         N.play()
-    }
+        if (Math.round(RanInt(1, 4)) == 1) or (Math.round(RanInt(1, 4)) == 4) {
+            aasi.innerHTML = "woop woop! sait 11.123€";
+            setTimeout(function(){
+                aasi.innerHTML = "!==!*";
+            }, 1000)
+        };
+    };
     if (Math.round(RanInt(1, 3)) == 3) {
         var N = new Audio("./auto.mp3")
         N.volume = 0.4
         N.play()
-        c("aasi", "Rikoit auton. Maksa 1€")
+        c("aasi", "Rikoit auton. Maksa 10€")
         maksu.style.display = "block"
     }
 }
