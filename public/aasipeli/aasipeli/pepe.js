@@ -1,6 +1,7 @@
 console.log("8")
 var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
+var money = 20
 aasi = document.getElementById('aasi')
 maksu = document.getElementById('maksu')
 maksu.style.display = "none"
@@ -40,6 +41,7 @@ function maksa() {
     setTimeout(function(){
         c("aasi", "!==!*")
     }, 1000);
+    money--
 }
 function perseile() {
     console.log(RanInt(1, 3))
