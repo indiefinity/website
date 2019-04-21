@@ -47,6 +47,7 @@ function perseile() {
     if (Math.round(RanInt(1, 3)) == 1) {
         var N = new Audio("./ovi.mp3")
         N.play()
+        console.log("...")
     }
     if (Math.round(RanInt(1, 3)) == 2) {
         var N = new Audio("./nappi.mp3")
