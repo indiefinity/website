@@ -51,7 +51,7 @@ function perseile() {
     if (Math.round(RanInt(1, 3)) == 2) {
         var N = new Audio("./nappi.mp3")
         N.play()
-        if (Math.round(RanInt(1, 4)) == 1) or (Math.round(RanInt(1, 4)) == 4) {
+        if (Math.round(RanInt(1, 4)) == 1) or (Math.round(RanInt(1, 4)) == 4); {
             aasi.innerHTML = "woop woop! sait 11.123€";
             setTimeout(function(){
                 aasi.innerHTML = "!==!*";
