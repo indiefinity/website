@@ -53,6 +53,7 @@ function perseile() {
         N.play()
         if (Math.round(RanInt(1, 4)) == 1) or (Math.round(RanInt(1, 4)) == 4); {
             aasi.innerHTML = "woop woop! sait 11.123€";
+            money =+ 11.123
             setTimeout(function(){
                 aasi.innerHTML = "!==!*";
             }, 1000)
