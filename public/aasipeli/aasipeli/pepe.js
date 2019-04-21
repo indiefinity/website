@@ -44,7 +44,7 @@ function maksa() {
     money--
 }
 function perseile() {
-    console.log(RanInt(1, 3))
+    console.log(Math.round(RanInt(1, 3));
     if (Math.round(RanInt(1, 3)) == 1) {
         var N = new Audio("./ovi.mp3")
         N.play()
