@@ -1,0 +1,13 @@
+{
+    "name": "villev3",
+    "version": "1.0.0",
+    "description": "Ville V3 bot",
+    "main": "bot.js",
+    "author": "Ville Kastell",
+    "dependencies": {
+        "discord.io": "github:izy521/discord.io",
+        "discord.js": "^11.4.2",
+        "opusscript": "0.0.6",
+        "winston": "^3.2.1"
+    }
+}
