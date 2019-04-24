@@ -7,7 +7,6 @@
     "dependencies": {
         "discord.io": "github:izy521/discord.io",
         "discord.js": "^11.4.2",
-        "opusscript": "0.0.6",
         "winston": "^3.2.1"
     }
 }
