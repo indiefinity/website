@@ -4,8 +4,10 @@ var ruoka = 0
 var money = 20
 aasi = document.getElementById('aasi')
 maksu = document.getElementById('maksu')
+raha = document.getElementById("raha");
 maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
+raha.innerHTML = ("raha: ", money);
 function syö() {
     ruoka = ruoka + 1
     if (ruoka > 99) {
@@ -36,12 +38,13 @@ function nuku() {
 function juokse() {
     alert("juokse");
 }
-function maksa() {
+function maksa(a) {
     maksu.style.display = "none"
     setTimeout(function(){
         c("aasi", "!==!*")
     }, 1000);
-    money--
+    money = money - a
+    raha.innerHTML = ("raha: ", money);
 }
 function perseile() {
     if (Math.round(RanInt(1, 3)) == 1) {
@@ -66,6 +69,7 @@ function perseile() {
         N.play()
         c("aasi", "Rikoit auton. Maksa 10€")
         maksu.style.display = "block"
+        maksu.onclick = "maksa(10)"
     }
 }
 function c(id, text) {
