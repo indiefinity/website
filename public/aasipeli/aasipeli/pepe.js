@@ -7,7 +7,7 @@ maksu = document.getElementById('maksu')
 raha = document.getElementById("raha");
 maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
-raha.innerHTML = ("raha: ", money);
+raha.innerHTML = "raha: " + money;
 function syö() {
     ruoka = ruoka + 1
     if (ruoka > 99) {
@@ -43,7 +43,7 @@ function maksa(a) {
     setTimeout(function(){
         c("aasi", "!==!*")
     }, 1000);
-    money = money - a
+    money = money - 10
     raha.innerHTML = ("raha: " + money);
 }
 function perseile() {
