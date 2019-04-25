@@ -69,7 +69,6 @@ function perseile() {
         N.play()
         c("aasi", "Rikoit auton. Maksa 10€")
         maksu.style.display = "block"
-        maksu.onclick = "maksa(10)"
     }
 }
 function c(id, text) {
