@@ -44,7 +44,7 @@ function maksa(a) {
         c("aasi", "!==!*")
     }, 1000);
     money = money - a
-    raha.innerHTML = ("raha: ", money);
+    raha.innerHTML = ("raha: " + money);
 }
 function perseile() {
     if (Math.round(RanInt(1, 3)) == 1) {
@@ -58,6 +58,7 @@ function perseile() {
         if (Math.round(RanInt(1, 4)) == 1) or (Math.round(RanInt(1, 4)) == 4); {
             aasi.innerHTML = "woop woop! sait 11.123€";
             money = money + 11.123
+            raha.innerHTML = ("raha: " + money);
             setTimeout(function(){
                 aasi.innerHTML = "!==!*";
             }, 1000)
