@@ -69,10 +69,10 @@ function perseile() {
         };
         if (Math.round(RanInt(1, 3)) == 3) {
             exec = true
-            var N = new Audio("./auto.mp3")
+            var N = new Audio("./kurkku.mp3")
             N.volume = 0.4
             N.play()
-            c("aasi", "Rikoit auton. Maksa 10€")
+            c("aasi", "Sait flunssan. Maksa 10€ lääkärille.")
             maksu.style.display = "block"
         }
         }
