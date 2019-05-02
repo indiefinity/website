@@ -1,4 +1,4 @@
-console.log("15")
+console.log("16")
 var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 var money = 20
@@ -44,7 +44,7 @@ function maksa() {
     setTimeout(function(){
         c("aasi", "!==!*")
     }, 1000);
-    money = money - 10
+    money = money - 50
     raha.innerHTML = ("raha: " + money + "€");
     exec = false
 }
@@ -72,7 +72,7 @@ function perseile() {
             var N = new Audio("./kurkku.mp3")
             N.volume = 0.4
             N.play()
-            c("aasi", "Sait flunssan. Maksa 100€ lääkärille.")
+            c("aasi", "Sait flunssan. Maksa 50€ lääkärille.")
             maksu.style.display = "block"
         }
         }
