@@ -46,6 +46,7 @@ function maksa() {
     }, 1000);
     money = money - 10
     raha.innerHTML = ("raha: " + money);
+    exec = false
 }
 function perseile() {
     if (exec == false) {
@@ -58,7 +59,6 @@ function perseile() {
             var N = new Audio("./nappi.mp3")
             N.play()
             if (Math.round(RanInt(1, 4)) == 1); {
-                exec = true
                 aasi.innerHTML = "woop woop! sait 11.123€";
                 money = money + 11.123
                 raha.innerHTML = ("raha: " + money);
@@ -68,6 +68,7 @@ function perseile() {
             };
         };
         if (Math.round(RanInt(1, 3)) == 3) {
+            exec = true
             var N = new Audio("./auto.mp3")
             N.volume = 0.4
             N.play()
