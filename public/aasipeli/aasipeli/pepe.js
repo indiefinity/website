@@ -1,4 +1,4 @@
-console.log("17")
+console.log("18")
 var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 var money = 20
