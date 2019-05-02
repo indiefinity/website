@@ -45,7 +45,7 @@ function maksa() {
         c("aasi", "!==!*")
     }, 1000);
     money = money - 10
-    raha.innerHTML = ("raha: " + money);
+    raha.innerHTML = ("raha: " + money + "€");
     exec = false
 }
 function perseile() {
@@ -59,9 +59,9 @@ function perseile() {
             var N = new Audio("./nappi.mp3")
             N.play()
             if (Math.round(RanInt(1, 4)) == 1); {
-                aasi.innerHTML = "woop woop! sait 11.123€";
-                money = money + 11.123
-                raha.innerHTML = ("raha: " + money);
+                aasi.innerHTML = "woop woop! Sait 20€ palkkaa.";
+                money = money + 20
+                raha.innerHTML = ("raha: " + money + "€");
                 setTimeout(function(){
                 aasi.innerHTML = "!==!*";
                 }, 1000)
@@ -72,7 +72,7 @@ function perseile() {
             var N = new Audio("./kurkku.mp3")
             N.volume = 0.4
             N.play()
-            c("aasi", "Sait flunssan. Maksa 10€ lääkärille.")
+            c("aasi", "Sait flunssan. Maksa 100€ lääkärille.")
             maksu.style.display = "block"
         }
         }
