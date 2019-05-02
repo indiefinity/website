@@ -2,6 +2,7 @@ console.log("8")
 var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 var money = 20
+var exec = false
 aasi = document.getElementById('aasi')
 maksu = document.getElementById('maksu')
 raha = document.getElementById("raha");
@@ -38,7 +39,7 @@ function nuku() {
 function juokse() {
     alert("juokse");
 }
-function maksa(a) {
+function maksa() {
     maksu.style.display = "none"
     setTimeout(function(){
         c("aasi", "!==!*")
@@ -47,34 +48,37 @@ function maksa(a) {
     raha.innerHTML = ("raha: " + money);
 }
 function perseile() {
-    if (Math.round(RanInt(1, 3)) == 1) {
-        var N = new Audio("./ovi.mp3")
-        N.play()
-        console.log("...")
-    }
-    if (Math.round(RanInt(1, 3)) == 2) {
-        var N = new Audio("./nappi.mp3")
-        N.play()
-        if (Math.round(RanInt(1, 4)) == 1); {
-            aasi.innerHTML = "woop woop! sait 11.123€";
-            money = money + 11.123
-            raha.innerHTML = ("raha: " + money);
-            setTimeout(function(){
+    if (exec == false) {
+        if (Math.round(RanInt(1, 3)) == 1) {
+            var N = new Audio("./ovi.mp3")
+            N.play()
+            console.log("...")
+        }
+        if (Math.round(RanInt(1, 3)) == 2) {
+            var N = new Audio("./nappi.mp3")
+            N.play()
+            if (Math.round(RanInt(1, 4)) == 1); {
+                exec = true
+                aasi.innerHTML = "woop woop! sait 11.123€";
+                money = money + 11.123
+                raha.innerHTML = ("raha: " + money);
+                setTimeout(function(){
                 aasi.innerHTML = "!==!*";
-            }, 1000)
+                }, 1000)
+            };
         };
-    };
-    if (Math.round(RanInt(1, 3)) == 3) {
-        var N = new Audio("./auto.mp3")
-        N.volume = 0.4
-        N.play()
-        c("aasi", "Rikoit auton. Maksa 10€")
-        maksu.style.display = "block"
+        if (Math.round(RanInt(1, 3)) == 3) {
+            var N = new Audio("./auto.mp3")
+            N.volume = 0.4
+            N.play()
+            c("aasi", "Rikoit auton. Maksa 10€")
+            maksu.style.display = "block"
+        }
+        }
     }
-}
 function c(id, text) {
     document.getElementById(id).innerHTML = text;
 }
 function RanInt (min, max) {
     return Math.random() * (max - min) + min;
-}
+};
