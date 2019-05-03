@@ -8,42 +8,12 @@ maksu = document.getElementById('maksu')
 raha = document.getElementById("raha");
 maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
-while (not(money > 0)) {
+function lost() {
     if (money < 0) {
-        alert("lol hävisit x d lol lol loll")
+        alert("FUCKIN LOST THE GAME YOU PSYCHO!")
     }
 }
 raha.innerHTML = "raha: " + money;
-function syö() {
-    ruoka = ruoka + 1
-    if (ruoka > 99) {
-        meetvurst.play()
-        console.log(":)")
-    }
-    c("ruoka", "ruoka: " + ruoka)
-    c("aasi", "!==!* III")
-    setTimeout(function(){
-        c("aasi", "&nbsp;!==!o.II")
-    }, 500);
-    setTimeout(function(){
-        c("aasi", "&nbsp;&nbsp;!==!o.I")
-    }, 1000);
-    setTimeout(function(){
-        c("aasi", "&nbsp;&nbsp;&nbsp;!==!o.")
-    }, 1500);
-    setTimeout(function(){
-        c("aasi", "!==!*")
-    }, 2000);
-}
-function juo() {
-    alert("juo");
-}
-function nuku() {
-    alert("nuku");
-}
-function juokse() {
-    alert("juokse");
-}
 function maksa() {
     maksu.style.display = "none"
     setTimeout(function(){
@@ -52,8 +22,10 @@ function maksa() {
     money = money - 50
     raha.innerHTML = ("raha: " + money + "€");
     exec = false
+    lost()
 }
 function perseile() {
+    lost()
     if (exec == false) {
         if (Math.round(RanInt(1, 3)) == 1) {
             var N = new Audio("./ovi.mp3")
@@ -70,9 +42,11 @@ function perseile() {
                 setTimeout(function(){
                 aasi.innerHTML = "!==!*";
                 }, 1000)
+                lost()
             };
         };
         if (Math.round(RanInt(1, 3)) == 3) {
+            lost()
             exec = true
             var N = new Audio("./kurkku.mp3")
             N.volume = 0.4
@@ -84,7 +58,9 @@ function perseile() {
     }
 function c(id, text) {
     document.getElementById(id).innerHTML = text;
+    lost()
 }
 function RanInt (min, max) {
     return Math.random() * (max - min) + min;
+    lost()
 };
