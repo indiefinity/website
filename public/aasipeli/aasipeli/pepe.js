@@ -3,7 +3,7 @@ var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 var money = 20
 var exec = false
-var lose
+var lose = true
 aasi = document.getElementById('aasi')
 maksu = document.getElementById('maksu')
 raha = document.getElementById("raha");
