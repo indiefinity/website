@@ -11,10 +11,10 @@ maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
 function lost() {
     if (lose == false) {
-    if (money < 0) {
-        alert("FUCKIN LOST THE GAME YOU PSYCHO!")
-    }
-    lose = true
+        if (money < 0) {
+            alert("FUCKIN LOST THE GAME YOU PSYCHO!")
+        }
+        lose = true
 }
 }
 raha.innerHTML = "raha: " + money;
