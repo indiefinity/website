@@ -3,15 +3,19 @@ var meetvurst = new Audio("jo.mp3");
 var ruoka = 0
 var money = 20
 var exec = false
+var lose
 aasi = document.getElementById('aasi')
 maksu = document.getElementById('maksu')
 raha = document.getElementById("raha");
 maksu.style.display = "none"
 c("ruoka", "ruoka: 0")
 function lost() {
+    if (lose == false) {
     if (money < 0) {
         alert("FUCKIN LOST THE GAME YOU PSYCHO!")
     }
+    lose = true
+}
 }
 raha.innerHTML = "raha: " + money;
 function maksa() {
