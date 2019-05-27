@@ -36,7 +36,7 @@ function rainbows() {
         blue2--;
         red2++;
     }
-    document.getElementById("rainbow").style.backgroundColor = "rgb(" + red2 + ", " + green2 + ", " + blue2 +")";
+    document.getElementById("rainbow").style.color = "rgb(" + red2 + ", " + green2 + ", " + blue2 +")";
     setTimeout(function(){
         rainbows();
     }, 5);
