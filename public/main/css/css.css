@@ -9,6 +9,7 @@ a {
 	color: 0aff8c;
 }
 .keskari{
-	margin: auto;
-	
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
