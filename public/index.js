@@ -1,3 +1,9 @@
+var red = 255
+var blue = 0
+var green = 0
+var red2 = 0
+var blue2 = 255
+var green2 = 0
 function lol() {
     if (red > 0 && blue == 0) {
         red--;
@@ -18,19 +24,19 @@ function lol() {
 }
 lol()
 function rainbows() {
-    if (red > 0 && blue == 0) {
-        red--;
-        green++;
+    if (red2 > 0 && blue2 == 0) {
+        red2--;
+        green2++;
     }
-    else if (green > 0) {
-        green--;
-        blue++;
+    else if (green2 > 0) {
+        green2--;
+        blue2++;
     }
-    else if (blue > 0) {
-        blue--;
-        red++;
+    else if (blue2 > 0) {
+        blue2--;
+        red2++;
     }
-    document.getElementsByClassName("rainbow").style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue +")";
+    document.getElementById("rainbow").style.backgroundColor = "rgb(" + red2 + ", " + green2 + ", " + blue2 +")";
     setTimeout(function(){
         rainbows();
     }, 5);
