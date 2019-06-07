@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style type="text/css">
+html {height: 100%;}
+#canvas {
+	width:1280px; 
+	height:720px;
+}
+
+</style>
+  	<script src="src/Runtime.js"></script>
+</head>
+
+<!-- This is where we create the Canvas element that will contain the application...-->
+<body>
+    <div id="wrapper">
+	    <div id="border">
+		    <div id="canvas">
+			    <canvas id="MMFCanvas" width="1280" height="720">
+				    <p>Your browser does not support Canvas.</p>
+			    </canvas>   
+		    </div>
+	    </div>
+    </div>  
+    <script>
+        // RUNTIMESTART
+	    // This is where the HTML5 runtime is actually started
+	    window.addEventListener("load", windowLoaded, false);
+	    function windowLoaded()
+	    {
+	        // Calls the runtime
+	        // First parameter : name of the canvas element
+	        // Second parameter : path to the cch file. Images and sounds must lay beside this file
+	        new Runtime("MMFCanvas", "resources/Haamupeli.cch");
+	    }
+    </script>
+</body>
+</html>
