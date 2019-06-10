@@ -43792,7 +43792,7 @@ window['Runtime'] = (function Runtime(__can, __path){
 
 	    createList: function (file) {
 
-	        var extMaxHandle = 2;
+	        var extMaxHandle = 6;
 	        if (extMaxHandle) {
 	            this.extensions = new Array(extMaxHandle);
 	            this.numOfConditions = new Array(extMaxHandle);
@@ -43807,6 +43807,12 @@ window['Runtime'] = (function Runtime(__can, __path){
 	this.addExt(e);
 	e = new CExtLoad();
 	e.handle = 1;
+	this.addExt(e);
+	e = new CExtLoad();
+	e.handle = 2;
+	this.addExt(e);
+	e = new CExtLoad();
+	e.handle = 3;
 	this.addExt(e);
 
 	            // INCLUDE_ADDEXT
@@ -43863,6 +43869,10 @@ window['Runtime'] = (function Runtime(__can, __path){
 	return new CRunKcBoxA();
 	case 1:
 	return new CRunKcButton();
+	case 2:
+	return new CRunkcpica();
+	case 3:
+	return new CRunkcpict();
 
 	            // INCLUDE_NEWEXT
 	        }
@@ -52170,6 +52180,608 @@ window['Runtime'] = (function Runtime(__can, __path){
 		});
 
 
+	//----------------------------------------------------------------------------------
+	//
+	// CRunkcpict: Picture Object
+	//
+	//----------------------------------------------------------------------------------
+	/* Copyright (c) 1996-2012 Clickteam
+	 *
+	 * This source code is part of the HTML5 exporter for Clickteam Multimedia Fusion 2.
+	 *
+	 * Permission is hereby granted to any person obtaining a legal copy
+	 * of Clickteam Multimedia Fusion 2 to use or modify this source code for
+	 * debugging, optimizing, or customizing applications created with
+	 * Clickteam Multimedia Fusion 2.
+	 * Any other use of this source code is prohibited.
+	 *
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+	 * IN THE SOFTWARE.
+	 */
+	CRunkcpica.CND_PICTURELOADED = 0;
+	CRunkcpica.CND_ISFLIPPED_HORZ = 1;
+	CRunkcpica.CND_ISFLIPPED_VERT = 2;
+	CRunkcpica.CND_ISWRAPMODE_ON = 3;
+	CRunkcpica.CND_LAST = 4;
+	CRunkcpica.ACT_LOADPICTURE = 0;
+	CRunkcpica.ACT_LOADPICTUREREQ = 1;
+	CRunkcpica.ACT_SETHOTSPOT = 2;
+	CRunkcpica.ACT_SETSIZEPIXELS = 3;
+	CRunkcpica.ACT_SETANGLE = 4;
+	CRunkcpica.ACT_SETSEMITRANSPRATIO = 5;
+	CRunkcpica.ACT_SETHOTSPOT_TOPLEFT = 6;
+	CRunkcpica.ACT_SETHOTSPOT_TOPCENTER = 7;
+	CRunkcpica.ACT_SETHOTSPOT_TOPRIGHT = 8;
+	CRunkcpica.ACT_SETHOTSPOT_CENTERLEFT = 9;
+	CRunkcpica.ACT_SETHOTSPOT_CENTER = 10;
+	CRunkcpica.ACT_SETHOTSPOT_CENTERRIGHT = 11;
+	CRunkcpica.ACT_SETHOTSPOT_BOTTOMLEFT = 12;
+	CRunkcpica.ACT_SETHOTSPOT_BOTTOMCENTER = 13;
+	CRunkcpica.ACT_SETHOTSPOT_BOTTOMRIGHT = 14;
+	CRunkcpica.ACT_FLIPH = 15;
+	CRunkcpica.ACT_FLIPV = 16;
+	CRunkcpica.ACT_LINKDIR = 17;
+	CRunkcpica.ACT_UNLINKDIR = 18;
+	CRunkcpica.ACT_LOOKAT = 19;
+	CRunkcpica.ACT_SETOFFSETX = 20;
+	CRunkcpica.ACT_SETOFFSETY = 21;
+	CRunkcpica.ACT_SETRESIZE_FAST = 22;
+	CRunkcpica.ACT_SETRESIZE_RESAMPLE = 23;
+	CRunkcpica.ACT_SETWRAPMODE_ON = 24;
+	CRunkcpica.ACT_SETWRAPMODE_OFF = 25;
+	CRunkcpica.ACT_ADDBACKDROP = 26;
+	CRunkcpica.ACT_SETAUTORESIZE_ON = 27;
+	CRunkcpica.ACT_SETAUTORESIZE_OFF = 28;
+	CRunkcpica.ACT_ZOOMPERCENT = 29;
+	CRunkcpica.ACT_ZOOMWIDTH = 30;
+	CRunkcpica.ACT_ZOOMHEIGHT = 31;
+	CRunkcpica.ACT_ZOOMRECT = 32;
+	CRunkcpica.EXP_GETPICTURENAME = 0;
+	CRunkcpica.EXP_GETPICTUREXSIZE = 1;
+	CRunkcpica.EXP_GETPICTUREYSIZE = 2;
+	CRunkcpica.EXP_GETRESIZEDXSIZE = 3;
+	CRunkcpica.EXP_GETRESIZEDYSIZE = 4;
+	CRunkcpica.EXP_GETDISPLAYXSIZE = 5;
+	CRunkcpica.EXP_GETDISPLAYYSIZE = 6;
+	CRunkcpica.EXP_GETHOTSPOTX = 7;
+	CRunkcpica.EXP_GETHOTSPOTY = 8;
+	CRunkcpica.EXP_GETANGLE = 9;
+	CRunkcpica.EXP_GETSEMITRANSPRATIO = 10;
+	CRunkcpica.EXP_GETOFFSETX = 11;
+	CRunkcpica.EXP_GETOFFSETY = 12;
+	CRunkcpica.EXP_GETZOOMFACTORX = 13;
+	CRunkcpica.EXP_GETZOOMFACTORY = 14;
+	CRunkcpica.PICTURE_RESIZE = 0x0001;
+	CRunkcpica.PICTURE_HIDEONSTART = 0x0002;
+	CRunkcpica.OLD_PICTURE_TRANSPARENT = 0x0004;		// nolonger used
+	CRunkcpica.OLD_PICTURE_TRANSP_BLACK = 0x0008;
+	CRunkcpica.PICTURE_TRANSP_FIRSTPIXEL = 0x0010;
+	CRunkcpica.PICTURE_FLIPPED_HORZ = 0x0020;
+	CRunkcpica.PICTURE_FLIPPED_VERT = 0x0040;
+	CRunkcpica.PICTURE_RESAMPLE = 0x0080;
+	CRunkcpica.WRAPMODE_OFF = 0x0100;
+	CRunkcpica.PICTURE_SOFTWAREMODE = 0x0200;
+	CRunkcpica.PICTURE_LINKDIR = 0x00010000;
+
+
+	function CRunkcpica()
+	{
+		this.szImageName = null;
+		this.dwImageFlags = 0;
+		this.dwPictureWidth = 0;
+		this.dwPictureHeight = 0
+		this.dwScreenWidth = 0;
+		this.dwScreenHeight = 0;
+		this.dwEditorWidth = 0;
+		this.dwEditorHeight = 0;
+
+		this.fAngle = 0;
+		this.nOffsetX = 0;
+		this.nOffsetY = 0;
+		this.bAlpha = 0;
+		this.cImage = null;
+		this.image = null;
+	}
+
+	CRunkcpica.prototype = CServices.extend(new CRunExtension(),
+		{
+
+			getNumberOfConditions: function ()
+			{
+				return CRunkcpica.CND_LAST;
+			},
+
+			createRunObject: function (file, cob, version)
+			{
+				this.ho.hoX = cob.cobX;
+				this.ho.hoY = cob.cobY;
+				this.dwEditorWidth = file.readAInt();
+				this.dwEditorHeight = file.readAInt();
+				this.ho.hoImgWidth = this.dwEditorWidth;
+				this.ho.hoImgHeight = this.dwEditorHeight;
+				this.dwImageFlags = file.readAInt();
+				this.dwTranspColor = file.readAInt();
+				this.imageName = file.readAString(260);
+				this.imageName = CServices.subtractFilename(this.imageName, this.rh.rhApp.appEditorFilename);
+
+				this.nOffsetX = 0;
+				this.nOffsetY = 0;
+				this.fAngle = 0;
+
+				this.image = new Image();
+				var that = this;
+				this.bImageLoaded = false;
+				this.cImage = new CImage();
+				this.image.onload = function ()
+				{
+					that.bImageLoaded = true;
+					if (!(that.dwImageFlags & CRunkcpica.PICTURE_RESIZE))
+					{
+						that.ho.hoImgWidth = that.image.width;
+						that.ho.hoImgHeight = that.image.height;
+					}
+					that.cImage.width = that.image.width;
+					that.cImage.height = that.image.height;
+					that.cImage.img = this;
+				}
+				this.image.src = this.imageName;
+				return true;
+			},
+
+			handleRunObject: function ()
+			{
+				return CRunExtension.REFLAG_ONESHOT;
+			},
+
+			displayRunObject: function (context, xDraw, yDraw)
+			{
+				if (this.bImageLoaded)
+				{
+					var scaleX = this.ho.hoImgWidth / this.cImage.width;
+					var scaleY = this.ho.hoImgHeight / this.cImage.height;
+					var x = xDraw + this.ho.hoX - this.rh.rhWindowX + this.ho.pLayer.x;
+					var y = yDraw + this.ho.hoY - this.rh.rhWindowY + this.ho.pLayer.y;
+					var angle = this.fAngle;
+					if (this.dwImageFlags & CRunkcpica.PICTURE_LINKDIR)
+					{
+						angle = (this.rh.getDir(this.ho) * 360) / 32;
+					}
+					var effect = this.ho.ros.rsEffect;
+					if ((this.dwImageFlags & CRunkcpica.PICTURE_RESIZE) && (this.dwImageFlags & CRunkcpica.PICTURE_RESAMPLE))
+						effect = CRSpr.BOP_SMOOTHING;
+					context.renderImage(this.cImage, x, y, angle, scaleX, scaleY, effect, this.ho.ros.rsEffectParam);
+				}
+			},
+
+			condition: function(num, cnd)
+			{
+				switch (num)
+				{
+					case CRunkcpica.CND_PICTURELOADED:
+						return this.bImageLoaded;
+					case CRunkcpica.CND_ISFLIPPED_HORZ:
+					case CRunkcpica.CND_ISFLIPPED_VERT:
+					case CRunkcpica.CND_ISWRAPMODE_ON:
+						return false;
+				}
+			},
+			action: function (num, act)
+			{
+				switch (num)
+				{
+					case CRunkcpica.ACT_LOADPICTURE:
+						this.actLoadPicture(act);
+						break;
+					case CRunkcpica.ACT_LOADPICTUREREQ:
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT:
+						this.cImage.xSpot = act.getParamExpression(this.rh, 0);
+						this.cImage.ySpot = act.getParamExpression(this.rh, 1);
+						break;
+					case CRunkcpica.ACT_SETSIZEPIXELS:
+						this.ho.hoImgWidth = Math.max(act.getParamExpression(this.rh, 0), 0);
+						this.ho.hoImgHeight = Math.max(act.getParamExpression(this.rh, 1), 10);
+						break;
+					case CRunkcpica.ACT_SETANGLE:
+						var angle = act.getParamExpression(this.rh, 0);
+						while (angle < 0)
+							angle += 360;
+						while (angle >= 360)
+							angle -= 360;
+						this.fAngle = angle;
+						break;
+					case CRunkcpica.ACT_SETSEMITRANSPRATIO:
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_TOPLEFT:
+						this.cImage.xSpot = 0;
+						this.cImage.ySpot = 0;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_TOPCENTER:
+						this.cImage.xSpot = this.cImage.width / 2;
+						this.cImage.ySpot = 0;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_TOPRIGHT:
+						this.cImage.xSpot = this.cImage.width;
+						this.cImage.ySpot = 0;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_CENTERLEFT:
+						this.cImage.xSpot = 0;
+						this.cImage.ySpot = this.cImage.height / 2;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_CENTER:
+						this.cImage.xSpot = this.cImage.width / 2;
+						this.cImage.ySpot = this.cImage.height / 2;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_CENTERRIGHT:
+						this.cImage.xSpot = this.cImage.width;
+						this.cImage.ySpot = this.cImage.height / 2;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_BOTTOMLEFT:
+						this.cImage.xSpot = 0;
+						this.cImage.ySpot = this.cImage.height;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_BOTTOMCENTER:
+						this.cImage.xSpot = this.cImage.width / 2;
+						this.cImage.ySpot = this.cImage.height;
+						break;
+					case CRunkcpica.ACT_SETHOTSPOT_BOTTOMRIGHT:
+						this.cImage.xSpot = this.cImage.width;
+						this.cImage.ySpot = this.cImage.height;
+						break;
+					case CRunkcpica.ACT_FLIPH:
+						break;
+					case CRunkcpica.ACT_FLIPV:
+						break;
+					case CRunkcpica.ACT_LINKDIR:
+						this.bLinkDir = true;
+						break;
+					case CRunkcpica.ACT_UNLINKDIR:
+						this.bLinkDir = false;
+						break;
+					case CRunkcpica.ACT_LOOKAT:
+						this.actLookAt(act);
+						break;
+					case CRunkcpica.ACT_SETOFFSETX:
+						this.offsetX = act.getParamExpression(this.rh, 0);
+						break;
+					case CRunkcpica.ACT_SETOFFSETY:
+						this.offsetY = act.getParamExpression(this.rh, 1);
+						break;
+					case CRunkcpica.ACT_SETRESIZE_FAST:
+						break;
+					case CRunkcpica.ACT_SETRESIZE_RESAMPLE:
+						break;
+					case CRunkcpica.ACT_SETWRAPMODE_ON:
+						break;
+					case CRunkcpica.ACT_SETWRAPMODE_OFF:
+						break;
+					case CRunkcpica.ACT_ADDBACKDROP:
+						break;
+					case CRunkcpica.ACT_SETAUTORESIZE_ON:
+						this.ho.hoImgWidth = this.dwEditorWidth;
+						this.ho.hoImgHeight = this.dwEditorHeight;
+						break;
+					case CRunkcpica.ACT_SETAUTORESIZE_OFF:
+						this.ho.hoImgWidth = this.cImage.width;
+						this.ho.hoImgHeight = this.cImage.height;
+						break;
+					case CRunkcpica.ACT_ZOOMPERCENT:
+						var percent = act.getParamExpression(this.rh, 0);
+						this.ho.hoImgWidth = this.cImage.width * percent;
+						this.ho.hoImgHeight = this.cImage.height * percent;
+						break;
+					case CRunkcpica.ACT_ZOOMWIDTH:
+						this.ho.hoImgWidth = act.getParamExpression(this.rh, 0);
+						this.ho.hoImgHeight = (this.cImage.height * this.ho.hoImgWidth) / this.cImage.width;
+						break;
+					case CRunkcpica.ACT_ZOOMHEIGHT:
+						this.ho.hoImgHeight = act.getParamExpression(this.rh, 0);
+						this.ho.hoImgWidth = (this.cImage.width * this.ho.hoImgHeight) / this.cImage.height;
+						break;
+					case CRunkcpica.ACT_ZOOMRECT:
+						this.ho.hoImgWidth = act.getParamExpression(this.rh, 0);
+						this.ho.hoImgHeight = act.getParamExpression(this.rh, 1);
+						break;
+				}
+			},
+
+			actLoadPicture: function (act)
+			{
+				this.imageName = CServices.subtractFilename(act.getParamExpString(this.rh, 0), this.rh.rhApp.appEditorFilename);
+				this.image = new Image();
+				var that = this;
+				this.bImageLoaded = false;
+				this.cImage = new CImage();
+				this.image.onload = function ()
+				{
+					that.bImageLoaded = true;
+					if (!(that.dwImageFlags & CRunkcpica.PICTURE_RESIZE))
+					{
+						that.ho.hoImgWidth = that.image.width;
+						that.ho.hoImgHeight = that.image.height;
+					}
+					that.cImage.width = that.image.width;
+					that.cImage.height = that.image.height;
+					that.cImage.img = this;
+				}
+				this.image.src = this.imageName;
+			},
+
+			actLookAt: function (act)
+			{
+				var tgtx = act.getParamExpression(this.rh, 0);
+				var tgty = act.getParamExpression(this.rh, 1);
+
+				var srcx = this.ho.hoX - this.cImage.xSpot;
+				var srcy = this.ho.hoY - this.cImage.ySpot;
+
+				// Calcul de l'angle (entre le centre de l'image et le point destination)
+				var angle;
+				if (srcx == tgtx)
+				{
+					if (tgty < srcy)
+						angle = 90;
+					else
+						angle = 270;
+				}
+				else
+				{
+					angle = ( Math.atan2(Math.abs(tgty - srcy), Math.abs(tgtx - srcx)) * 180 / 3.141592653589);
+
+					// Trouver le bon cadran
+					if (tgtx > srcx)
+					{
+						if (tgty > srcy)
+							angle = 360 - angle;
+					}
+					else
+					{
+						if (tgty > srcy)
+							angle = 180 + angle;
+						else
+							angle = 180 - angle;
+					}
+				}
+				this.fAngle = angle;
+			},
+
+			expression: function(num)
+			{
+				switch(num)
+				{
+					case CRunkcpica.EXP_GETPICTURENAME:
+						return this.szImageName;
+					case CRunkcpica.EXP_GETPICTUREXSIZE:
+						return this.cImage.width;
+					case CRunkcpica.EXP_GETPICTUREYSIZE:
+						return this.cImage.height;
+					case CRunkcpica.EXP_GETRESIZEDXSIZE:
+						return this.ho.hoImgWidth;
+					case CRunkcpica.EXP_GETRESIZEDYSIZE:
+						return this.ho.hoImgHeight;
+					case CRunkcpica.EXP_GETDISPLAYXSIZE:
+						return this.ho.hoImgWidth;
+					case CRunkcpica.EXP_GETDISPLAYYSIZE:
+						return this.ho.hoImgHeight;
+					case CRunkcpica.EXP_GETHOTSPOTX:
+						return this.cImage.xSpot;
+					case CRunkcpica.EXP_GETHOTSPOTY:
+						return this.cImage.ySpot;
+					case CRunkcpica.EXP_GETANGLE:
+						return this.fAngle;
+					case CRunkcpica.EXP_GETSEMITRANSPRATIO:
+						var alpha = 1.0;
+						if ((this.ho.ros.rsEffect & CRSpr.BOP_RGBAFILTER) != 0)
+							alpha = (((this.ho.ros.rsEffectParam >>> 24) & 0xFF) / 255.0);
+						else if ((this.ho.ros.rsEffect & CRSpr.BOP_MASK ) == CRSpr.BOP_BLEND)
+							return Math.round((this.ho.ros.rsEffectParam * 100) / 128);
+						return Math.round( (1 - alpha) * 255 );
+					case CRunkcpica.EXP_GETOFFSETX:
+						return this.nOffsetX;
+					case CRunkcpica.EXP_GETOFFSETY:
+						return this.nOffsetY;
+					case CRunkcpica.EXP_GETZOOMFACTORX:
+						if ( this.ho.hoImgWidth == 0 )
+							return 0;
+						return (this.ho.hoImgWidth * 100) / this.cImage.width;
+					case CRunkcpica.EXP_GETZOOMFACTORY:
+						if ( this.ho.hoImgHeight == 0 )
+							return 0;
+						return (this.ho.hoImgHeight * 100) / this.cImage.height;
+				}
+			}
+		});
+
+
+
+	//----------------------------------------------------------------------------------
+	//
+	// CRunkcpict: Picture Object
+	//
+	//----------------------------------------------------------------------------------
+	/* Copyright (c) 1996-2012 Clickteam
+	 *
+	 * This source code is part of the HTML5 exporter for Clickteam Multimedia Fusion 2.
+	 *
+	 * Permission is hereby granted to any person obtaining a legal copy
+	 * of Clickteam Multimedia Fusion 2 to use or modify this source code for
+	 * debugging, optimizing, or customizing applications created with
+	 * Clickteam Multimedia Fusion 2.
+	 * Any other use of this source code is prohibited.
+	 *
+	 * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	 * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	 * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	 * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	 * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+	 * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+	 * IN THE SOFTWARE.
+	 */
+	CRunkcpict.ACT_LOADPICTURE = 0;
+	CRunkcpict.ACT_LOADPICTUREREQ = 1;
+	CRunkcpict.ACT_SHOW = 2;
+	CRunkcpict.ACT_HIDE = 3;
+	CRunkcpict.ACT_IMAGERESIZEON = 4;
+	CRunkcpict.ACT_IMAGERESIZEOFF = 5;
+	CRunkcpict.ACT_LOADPICTURENAM = 6;
+	CRunkcpict.CND_PICTURELOADED = 0;
+	CRunkcpict.CND_VISIBLE = 1;
+	CRunkcpict.EXP_GETPICTURENAME = 0;
+	CRunkcpict.EXP_GETPICTUREXSIZE = 1;
+	CRunkcpict.EXP_GETPICTUREYSIZE = 2;
+	CRunkcpict.EXP_GETSCREENXSIZE = 3;
+	CRunkcpict.EXP_GETSCREENYSIZE = 4;
+	CRunkcpict.EXP_GETXPOS = 5;
+	CRunkcpict.EXP_GETYPOS = 6;
+	CRunkcpict.PICTURE_RESIZE = 0x0001;
+	CRunkcpict.PICTURE_HIDEONSTART = 0x0002;
+	CRunkcpict.PICTURE_TRANSP_FIRSTPIXEL = 0x0010;
+
+	function CRunkcpict()
+	{
+		this.sImageResize = false;
+		this.sImageShow = false;
+		this.szImageName = null;
+		this.nPictureWidth = 0;
+		this.nPictureHeight = 0;
+	};
+
+	CRunkcpict.prototype = CServices.extend(new CRunExtension(),
+		{
+			getNumberOfConditions: function ()
+			{
+				return 9;
+			},
+
+			createRunObject: function (file, cob, version)
+			{
+				this.ho.hoX = cob.cobX;
+				this.ho.hoY = cob.cobY;
+				this.width = file.readAShort();
+				this.height = file.readAShort();
+				this.ho.hoImgWidth = this.width;
+				this.ho.hoImgHeight = this.height;
+				this.flags = file.readAShort();
+				this.bVisible = !(this.flags & CRunkcpict.PICTURE_HIDEONSTART);
+				this.bImageResize = (this.flags & CRunkcpict.PICTURE_RESIZE);
+				this.imageName = CServices.subtractFilename(file.readAString(260), this.rh.rhApp.appEditorFilename);
+
+				this.image = new Image();
+				var that = this;
+				this.image.onload = function ()
+				{
+					that.bImageLoaded = true;
+					if (!that.bImageResize)
+					{
+						that.ho.hoImgWidth = that.image.width;
+						that.ho.hoImgHeight = that.image.height;
+					}
+				}
+				this.image.src = this.imageName;
+				return true;
+			},
+
+			handleRunObject: function ()
+			{
+				return CRunExtension.REFLAG_ONESHOT;
+			},
+
+			displayRunObject: function (context, xDraw, yDraw)
+			{
+				if (this.bImageLoaded && this.bVisible)
+				{
+					context.renderSimpleImage(this.image, this.ho.hoX - this.rh.rhWindowX, this.ho.hoY - this.rh.rhWindowY,
+						this.ho.hoImgWidth, this.ho.hoImgHeight, this.ho.hoOi.oiInkEffect, this.ho.hoOi.inkEffectParam);
+				}
+			},
+
+			condition: function (num, cnd)
+			{
+				switch (num)
+				{
+					case 0:
+						return this.bImageLoaded;
+					case 1:
+						return this.bVisible;
+				}
+				return false;
+			},
+
+			action: function (num, act)
+			{
+				switch (num)
+				{
+					case 0:
+						this.actLoadPicture(act);
+						break;
+					case 1:
+						break;
+					case 2:
+						this.bVisible = true;
+						break;
+					case 3:
+						this.bVisible = false;
+						break;
+					case 4:
+						this.ho.hoImgWidth = this.width;
+						this.ho.hoImgHeight = this.height;
+						this.bImageResize = true;
+						break;
+					case 5:
+						this.ho.hoImgWidth = this.image.width;
+						this.ho.hoImgHeight = this.image.height;
+						this.bImageResize = false;
+						break;
+					case 6:
+						this.actLoadPicture(act);
+						break;
+				}
+			},
+
+			actLoadPicture: function (act)
+			{
+				this.bImageLoaded = false;
+				var that = this;
+				this.image.onload = function ()
+				{
+					that.bImageLoaded = true;
+					if (!that.bImageResize)
+					{
+						that.ho.hoImgWidth = that.image.width;
+						that.ho.hoImgHeight = that.image.height;
+					}
+				}
+				this.image.src = act.getParamExpString(rh, 0);
+			},
+
+			expression: function (num)
+			{
+				switch (num)
+				{
+					case 0:
+						return this.image.src;
+					case 1:
+						return this.image.width;
+					case 2:
+						return this.image.height;
+					case 3:
+						return this.ho.hoImgWidth;
+					case 4:
+						return this.ho.hoImgHeight;
+					case 5:
+						return this.ho.hoX;
+					case 6:
+						return this.ho.hoY;
+				}
+				return 0;
+			}
+
+		});
 
 	Runtime(__can, __path); 
 })
