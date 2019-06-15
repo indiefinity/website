@@ -3,11 +3,12 @@
         <p></p>
         <script>
         const test = () => {
-  return fetch('/.netlify/functions/todos-read-all').then((response) => {
+  return fetch('/.netlify/functions/tester').then((response) => {
     return response.json()
   })
 }
         console.log(test)
+        console.log(response)
         </script>
     </body>
 </html>
