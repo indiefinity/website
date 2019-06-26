@@ -7,3 +7,4 @@ const readAll = () => {
   }
   readAll()
   console.log("½")
+  console.log(readAll())
