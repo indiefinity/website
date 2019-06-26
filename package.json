@@ -5,6 +5,10 @@
   "dependencies": {
     "faunadb": "^2.5.2"
   },
+  "scripts": {
+    "build": "npm-run-all --parallel build:**",
+    "build:functions": "netlify-lambda build functions -c ./webpack.config.js",
+  },
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
     "markdown-magic": "^0.1.25",
