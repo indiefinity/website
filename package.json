@@ -5,12 +5,6 @@
   "dependencies": {
     "faunadb": "^2.5.2"
   },
-  "scripts": {
-    "docs": "md-magic --path '**/*.md' --ignore 'node_modules'",
-    "start": "npm-run-all --parallel checkForFaunaKey start:app start:server",
-    "start:server": "netlify-lambda serve functions -c ./webpack.config.js",
-    "build": "npm-run-all --parallel build:**"
-  },
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1",
     "markdown-magic": "^0.1.25",
