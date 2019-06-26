@@ -5,4 +5,5 @@ const readAll = () => {
       console.log(response.json())
     })
   }
-  readAll
+  readAll()
+  console.log("½")
