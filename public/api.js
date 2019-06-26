@@ -1,8 +1,7 @@
 const readAll = () => {
     return fetch('/.netlify/functions/tester').then((response) => {
       return response.json()
+      console.log(response)
+      console.log(response.json())
     })
-  }
-  export default {
-    read: readAll
   }
