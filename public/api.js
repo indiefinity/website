@@ -5,3 +5,4 @@ const readAll = () => {
       console.log(response.json())
     })
   }
+  readAll
