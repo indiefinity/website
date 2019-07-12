@@ -1,6 +1,6 @@
 html,
 html{
-	font-family: 'Sniglet', cursive;
+	font-family: 'ubuntu', cursive;
 }
 a.visited{
 	color: ffce0a;
@@ -15,7 +15,6 @@ a {
 	text-align: center;
 }
 #text {
-	font-family: Ubuntu;
 	height:100%;
 	width: 100%;
 	margin: 0;
