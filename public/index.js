@@ -1,5 +1,6 @@
+var startingDegree = r(0,180)
 function reset()
-    var startingDegree = r(0,180)
+    startingDegree = r(0,180)
     console.log(startingDegree)
     document.getElementById('text').style.rotate(startingDegree)
 function r(min, max) {
