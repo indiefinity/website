@@ -11,6 +11,7 @@ function r(min, max) {
   return Math.floor(min + Math.random()*(max + 1 - min))
 }
 reset()
+spin()
 function spin() {
   setTimeout(function() {
     spin();
