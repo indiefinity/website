@@ -4,6 +4,9 @@ var currentSpeed = startingSpeed
 var currentDegree = startingDegree
 function reset() {
     startingDegree = r(0,180)
+    startingSpeed = Math.random()
+    currentSpeed = startingSpeed
+    currentDegree = startingDegree
     console.log(startingDegree)
     document.getElementById('text').style.transform = "rotate(" + startingDegree + "deg)"
 }
