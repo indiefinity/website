@@ -1,5 +1,5 @@
 var startingDegree = r(0,180)
-var startingSpeed = Math.random()
+var startingSpeed = Math.random() * 5
 var currentSpeed = startingSpeed
 var currentDegree = startingDegree
 function reset() {
@@ -23,6 +23,6 @@ function spin() {
     currentDegree = currentDegree * currentSpeed
     document.getElementById('text').style.transform = "rotate(" + currentDegree + "deg)"
     currentSpeed = currentSpeed / 1.01
-    //if (currentSpeed < 0.01) {reset()}
+    if (currentSpeed < 0.01) {reset()}
   }
 }
