@@ -1,4 +1,7 @@
 var startingDegree = r(0,180)
+var startingSpeed = Math.random()
+var currentSpeed = startingSpeed
+var currentDegree = startingDegree
 function reset() {
     startingDegree = r(0,180)
     console.log(startingDegree)
@@ -8,3 +11,14 @@ function r(min, max) {
   return Math.floor(min + Math.random()*(max + 1 - min))
 }
 reset()
+function spin() {
+  setTimeout(function() {
+    spin();
+  }, 20);
+  if (startingSpeed < 0.2) {startingSpeed = Math.random();currentSpeed = startingSpeed} else {
+    currentDegree = currentDegree * currentSpeed
+    document.getElementById('text').style.transform = "rotate(" + currentDegree + "deg)"
+    currentSpeed = currentSpeed / 1.2
+    if (currentSpeed < 0.1) {reset()}
+  }
+}
