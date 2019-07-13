@@ -27,6 +27,6 @@ function spin() {
     if (currentSpeed < 1) {
     setTimeout(function() {
       reset()
-    },5000)
+    },5000);
     }
 }
