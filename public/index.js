@@ -20,6 +20,6 @@ function spin() {
     currentDegree = currentDegree * currentSpeed
     document.getElementById('text').style.transform = "rotate(" + currentDegree + "deg)"
     currentSpeed = currentSpeed / 1.01
-    if (currentSpeed < 0.01) {reset()}
+    //if (currentSpeed < 0.01) {reset()}
   }
 }
