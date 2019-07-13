@@ -15,7 +15,7 @@ a {
 	text-align: center;
 }
 #container {
-	font-family: ubuntu;
+	font-family: "ubuntu";
 	height:100%;
 	width: 100%;
 	margin: 0;
