@@ -1,32 +1,4 @@
 html,
-html{
-	font-family: 'ubuntu', cursive;
+html {
+	font-family: "Ubuntu";
 }
-a.visited{
-	color: ffce0a;
-}
-a {
-	color: 0aff8c;
-}
-#rainbow {
-	margin: 50vh auto 0;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-#container {
-	height:100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	vertical-align: middle;
-	text-align: center;
- }
- #text {
-	margin: 0;
-	padding: 0;
-	vertical-align: middle;
-	text-align: center;
- }
- 
