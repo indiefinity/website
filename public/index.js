@@ -1,10 +1,10 @@
-var startingDegree = r(0,180)
+var startingDegree = r(0,360)
 var startingSpeed = r(0,100)
 var currentSpeed = startingSpeed
 var currentDegree = startingDegree
 function reset() {
-    startingDegree = r(0,180)
-    startingSpeed = Math.random()
+    startingDegree = r(0,360)
+    startingSpeed = r(0,100)
     currentSpeed = startingSpeed
     currentDegree = startingDegree
     console.log(startingDegree)
