@@ -3,17 +3,12 @@ html {
 	font-family: "Ubuntu";
 }
 .menu {
-	background-color: azure;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 15px 15px 15px 15px;
+	font-family: "Ubuntu";
+	height:100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
 	vertical-align: middle;
-	text-align: middle;
-}
-#middle {
-	vertical-align: center;
-	text-align: middle;
-}
-.menuchild {
-	vertical-align: middle;
-}
+	text-align: center;
+ }
