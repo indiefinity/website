@@ -25,9 +25,10 @@ function spin() {
     currentSpeed = currentSpeed * 0.95
     
     if (currentSpeed < 1 && timeout == 0) {
+      timeout = 5
     setTimeout(function() {
       reset();
-      timeout = 5
+      
     }, 5000);
     } else {
       if (currentSpeed < 1 && !timeout == 0) {
