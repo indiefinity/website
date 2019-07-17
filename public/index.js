@@ -19,10 +19,10 @@ function spin() {
   setTimeout(function() {
     spin();
   }, 20);
-  if (startingSpeed < 0.2) {startingSpeed = Math.random();currentSpeed = startingSpeed} else {
+  if (startingSpeed < 10) {startingSpeed = Math.random();currentSpeed = startingSpeed} else {
     currentDegree = currentDegree * currentSpeed
     document.getElementById('text').style.transform = "rotate(" + currentDegree + "deg)"
-    currentSpeed = currentSpeed / 5
+    currentSpeed = currentSpeed / (currentSpeed * 0.5)
     
     if (currentSpeed < 1) {
     setTimeout(function() {
