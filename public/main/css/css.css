@@ -11,4 +11,6 @@ html {
 	overflow: hidden;
 	vertical-align: middle;
 	text-align: center;
+	background-color: azure;
+	border-radius: 15px 15px 15px 15px;
  }
