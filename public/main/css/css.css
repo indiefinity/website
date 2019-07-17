@@ -15,5 +15,6 @@ html {
 .peasant {
 	background-color: azure;
 	border-radius: 15px 15px 15px 15px;
-	padding: 10px
+	padding: 10px;
+	width: 40%
 }
