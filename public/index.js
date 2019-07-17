@@ -1,5 +1,5 @@
 var startingDegree = r(0,360)
-var startingSpeed = r(0,100)
+var startingSpeed = r(100,1000)
 var currentSpeed = startingSpeed
 var currentDegree = startingDegree
 function reset() {
