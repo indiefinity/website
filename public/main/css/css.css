@@ -1,4 +1,10 @@
 html,
 html {
 	font-family: "Ubuntu";
+},
+.menu {
+	background-color: azure;
+	border-radius: 15px 15px 15px 15px;
+	vertical-align: center;
+	text-align: middle;
 }
