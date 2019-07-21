@@ -7,3 +7,6 @@ function back() {
     document.getElementById('button').style.display = "none"
     document.getElementById('text').style.display = "none"
 }
+function textEval() {
+    document.getElementById('tresult').innerHTML = eval(document.getElementById('textInput').innerHTML)
+}
