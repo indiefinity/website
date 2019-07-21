@@ -23,12 +23,8 @@ function input(input) {
 }
 
 function result() {
-    if (!disp.innerHTML == "1+1" && !done) {
+    if (!done) {
         disp.innerHTML = disp.innerHTML + "=" + eval(disp.innerHTML)
-    } else {
-        if (!done) {
-            disp.innerHTML = disp.innerHTML + "=" + "3"
-        }
     }
     done = true
 }
