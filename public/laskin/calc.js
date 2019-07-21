@@ -26,7 +26,9 @@ function result() {
     if (!disp.innerHTML == "1+1" && !done) {
         disp.innerHTML = disp.innerHTML + "=" + eval(disp.innerHTML)
     } else {
-        disp.innerHTML = disp.innerHTML + "=" + "3"
+        if (!done) {
+            disp.innerHTML = disp.innerHTML + "=" + "3"
+        }
     }
     done = true
 }
