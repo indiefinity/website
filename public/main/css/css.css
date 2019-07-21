@@ -25,7 +25,8 @@ html {
 	-webkit-border-radius: 8;
 	-moz-border-radius: 8;
 	border-radius: 8px;
-	font-family: Ubuntu;
+	border-color: none;
+	font-family: "Ubuntu";
 	color: #ffffff;
 	font-size: 20px;
 	background: #3498db;
