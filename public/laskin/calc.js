@@ -8,5 +8,5 @@ function back() {
     document.getElementById('text').style.display = "none"
 }
 function textEval() {
-    document.getElementById('tresult').innerHTML = eval(document.getElementById('textInput').innerHTML)
+    document.getElementById('tresult').innerHTML = eval(document.getElementById('textInput').value)
 }
