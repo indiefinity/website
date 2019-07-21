@@ -1,5 +1,5 @@
 const disp = document.getElementById('display')
-var done = false
+var done = true
 
 function selector(sel) {
     document.getElementById('selector').style.display = "none"
@@ -23,7 +23,7 @@ function input(input) {
 }
 
 function result() {
-    if (!disp.innerHTML == "1+1") {
+    if (!disp.innerHTML == "1+1" && !done) {
         disp.innerHTML = disp.innerHTML + "=" + eval(disp.innerHTML)
     } else {
         disp.innerHTML = disp.innerHTML + "=" + "3"
