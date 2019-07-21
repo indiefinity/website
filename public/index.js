@@ -17,6 +17,6 @@ function lol() {
     document.body.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue +")";
     setTimeout(function(){
         lol();
-    }, 100);
+    }, 20);
 }
 lol()
