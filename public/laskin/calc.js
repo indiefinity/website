@@ -1,4 +1,5 @@
 const disp = document.getElementById('display')
+var done = false
 
 function selector(sel) {
     document.getElementById('selector').style.display = "none"
@@ -15,17 +16,28 @@ function textEval() {
 
 //begin button
 function input(input) {
-
+    if (!done) {disp.innerHTML = disp.innerHTML + input} else {
+        disp.innerHTML = input
+        done = false
+    }
 }
 
 function result() {
-
+    if (!disp.innerHTML == "1+1") {
+        disp.innerHTML = disp.innerHTML + "=" + eval(disp.innerHTML)
+    } else {
+        disp.innerHTML = disp.innerHTML + "=" + "3"
+    }
+    done = true
 }
 
-function reset() {
-
-}
+function reset() {disp.innerHTML = ""}
 
 function backspace() {
-    disp.innerHTML = disp.innerHTML.substring(0, disp.innerHTML.length - 1)
+    if (!done) {
+        disp.innerHTML = disp.innerHTML.substring(0, disp.innerHTML.length - 1)
+    } else {
+        disp.innerHTML = ""
+        done = false
+    }
 }
