@@ -1,6 +1,12 @@
 html,
 .topbar {
+    padding: 0;
+    margin: 0;
     width: 100%;
     height: 20px;
+}
+.topbarp {
+    padding: 0;
+    margin: 0;
     background-color: #5d5f63;
 }
