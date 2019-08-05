@@ -9,8 +9,8 @@ function read() {
             text.innerHTML = data.joke
             speak(data.joke)
         }
-})
- }
+    })
+}
 function button() {
     read()
 }
