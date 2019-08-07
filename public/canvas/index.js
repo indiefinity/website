@@ -9,7 +9,7 @@ img.onload = function(){
     bird = img
     //ctx.drawImage(img,0,0);
 };
-img.src = "./bird.png";  
+img.src = "./emp.jpg";  
 
 var char = {"x":100,"y":200}
 var main = setInterval(function() {
