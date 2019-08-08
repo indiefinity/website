@@ -53,20 +53,16 @@ function jump() {
 }, 10)
 }
 function pipe() {
-    let pipe = {"x": 860, "y":r(200,500)}
+    let pipe = {"x": 860, "y":r(100,450)}
     let pipes = setInterval(function() {
         c2.width = c2.width
         g2.fillStyle = "#0d7a23"
         g2.fillRect(pipe.x,0, 80, c.height)
         g2.clearRect(pipe.x, c2.height - pipe.y, 80, -200)
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 210) {fail()}
-         /* The fuck the code
-        g2.fillStyle = "blue"
-        g2.fillRect(pipe.x,c2.height - pipe.y - 150, 80, 150)
-        g2.fillStyle = 'red'
-        g2.fillRect(pipe.x, c2.height - pipe.y + 150, 80, 150)
-        */
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
+        if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 210) {fail()}
+        if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50) {score++}
         pipe.x -= 2
         if (pipe.x < 0) {
