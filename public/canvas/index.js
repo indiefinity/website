@@ -5,6 +5,7 @@ const g2 = c2.getContext('2d');
 const c3 = document.getElementById('bg')
 const bg = c3.getContext('2d');
 var bird
+var highscore = getCookie("highscore")
 var failed = false
 var score = 0
 var img = new Image();
@@ -13,6 +14,7 @@ img.onload = function(){
     //ctx.drawImage(img,0,0);
 };
 img.src = "./bird.png";  
+console.log("start!")
 pipe()
 var char = {"x":100,"y":200}
 var main = setInterval(function() {
@@ -22,8 +24,8 @@ var main = setInterval(function() {
     g.fillStyle = "#000000"
     g.drawImage(bird, char.x, c.height - char.y,);
     g.fillStyle = "#40b320"
-    g.fillRect(0, 550, c.width, 50);
-
+    g.fillRect(0, 550, c.width, 50); 
+    document.getElementById('score').innerHTML = Math.floor(score / 6) + " (Highscore: " + highscore + ")"
 }, 10)
 var timer2 = setInterval(function() {
     pipe()
@@ -80,7 +82,6 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
-            document.getElementById('score').innerHTML = Math.floor(score / 6)
         }
         pipe.x -= 8
         if (pipe.x < 0) {
@@ -112,7 +113,7 @@ function pipe() {
                 pipe.y += 4
                 break;
         }
-        console.log(pipe.y)
+        //to flood console, and debug i guess =>  console.log(pipe.y)
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()} //Start scan
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
@@ -123,7 +124,6 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
-            document.getElementById('score').innerHTML = Math.floor(score / 6)
         } //End scan
         pipe.x -= 8 //Move speed
         if (pipe.x < 0) { //delete function
@@ -147,4 +147,30 @@ function fail() {
     g.fillStyle = "red"
     g.fillRect(0, 0, c.width, c.height)
     failed = true
+    if (score > highscore) {
+        setCookie("highscore", score, 9999)
+    }
 }
+
+//copypaste land
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
