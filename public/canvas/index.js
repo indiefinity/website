@@ -148,7 +148,7 @@ function fail() {
     g.fillRect(0, 0, c.width, c.height)
     failed = true
     if (Math.floor(score / 6) > highscore) {
-        setCookie("highscore", Math.floor(score / 6 - 1), 9999)
+        setCookie("highscore", Math.floor(score / 6 - 0.4), 9999)
     }
 }
 
