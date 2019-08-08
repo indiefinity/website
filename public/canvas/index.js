@@ -3,6 +3,7 @@ const g = c.getContext("2d");
 const c2 = document.getElementById('pipes')
 const g2 = c2.getContext('2d');
 var bird
+var failed = false
 var score = 0
 var img = new Image();
 img.onload = function(){
@@ -10,7 +11,7 @@ img.onload = function(){
     //ctx.drawImage(img,0,0);
 };
 img.src = "./bird.png";  
-
+pipe()
 var char = {"x":100,"y":200}
 var main = setInterval(function() {
     c.width = c.width
@@ -18,6 +19,7 @@ var main = setInterval(function() {
     g.drawImage(bird, char.x, c.height - char.y,);
     g.fillStyle = "#40b320"
     g.fillRect(0, 550, c.width, 50);
+
 }, 10)
 var timer2 = setInterval(function() {
     pipe()
@@ -37,7 +39,11 @@ c.addEventListener( "keydown", doKeyDown, true);
 function doKeyDown(e) {
     switch(e.keyCode) {
         case 32:
-            jump();
+            if (failed) {
+                window.location = window.location
+            } else {
+                jump();
+            }
             break;
     };
 };
@@ -63,7 +69,14 @@ function pipe() {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 210) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
-        if (char.x > pipe.x && char.x < pipe.x + 50) {score++}
+        if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y > pipe.y + 210) {fail()}
+        if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
+        if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 210) {fail()}
+        if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        if (char.x > pipe.x && char.x < pipe.x + 50) {
+            score++
+            document.getElementById('score').innerHTML = score / 24
+        }
         pipe.x -= 2
         if (pipe.x < 0) {
             clearInterval(pipes)
@@ -84,4 +97,5 @@ function fail() {
     c2.width = c2.width
     g.fillStyle = "red"
     g.fillRect(0, 0, c.width, c.height)
+    failed = true
 }
