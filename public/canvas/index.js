@@ -2,6 +2,8 @@ const c = document.getElementById('canvas');
 const g = c.getContext("2d");
 const c2 = document.getElementById('pipes')
 const g2 = c2.getContext('2d');
+const c3 = document.getElementById('bg')
+const bg = c3.getContext('2d');
 var bird
 var failed = false
 var score = 0
@@ -15,6 +17,8 @@ pipe()
 var char = {"x":100,"y":200}
 var main = setInterval(function() {
     c.width = c.width
+    bg.fillStyle = "#8fddff";
+    bg.fillRect(0, 0, canvas.width, canvas.height);
     g.fillStyle = "#000000"
     g.drawImage(bird, char.x, c.height - char.y,);
     g.fillStyle = "#40b320"
@@ -23,7 +27,7 @@ var main = setInterval(function() {
 }, 10)
 var timer2 = setInterval(function() {
     pipe()
-}, 4000)
+}, 1000)
 
 var gravity = setInterval(function() {
     if (char.y < 100) {
@@ -75,9 +79,9 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
-            document.getElementById('score').innerHTML = score / 24
+            document.getElementById('score').innerHTML = Math.floor(score / 6)
         }
-        pipe.x -= 2
+        pipe.x -= 8
         if (pipe.x < 0) {
             clearInterval(pipes)
         }
