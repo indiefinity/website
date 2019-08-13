@@ -40,21 +40,29 @@ var gravity = setInterval(function() {
         }
 }, 10)
 
+//keymush land
 window.addEventListener( "keypress", doKeyDown, false);
 c.addEventListener( "keydown", doKeyDown, true);
 function doKeyDown(e) {
     switch(e.keyCode) {
         case 32:
-            if (failed) {
-                window.location = window.location
-            } else {
                 jump();
-            }
+            break;
+        case 65:
+            console.log("a")
+            char.x -= 2
+            break;
+        case 68:
+            console.log("d")
+            char.x += 2
             break;
     };
 };
-
+//cool shit land
 function jump() {
+    if (failed) {
+        window.location = window.location
+    }
     let velocity = 10
     var jump = setInterval(function() {
         char.y += velocity;
@@ -66,6 +74,7 @@ function jump() {
 }
 function pipe() {
     if (r(0,1) == 0) {
+        //normal boring pipe
     let pipe = {"x": 860, "y":r(100,450)}
     let pipes = setInterval(function() {
         c2.width = c2.width
