@@ -29,7 +29,7 @@ var main = setInterval(function() {
 }, 10)
 var timer2 = setInterval(function() {
     pipe()
-}, 1000)
+}, 500)
 
 var gravity = setInterval(function() {
     if (char.y < 100) {
