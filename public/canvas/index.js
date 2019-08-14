@@ -29,7 +29,7 @@ var main = setInterval(function() {
 }, 10)
 var timer2 = setInterval(function() {
     pipe()
-}, 500)
+}, 1000)
 
 var gravity = setInterval(function() {
     if (char.y < 100) {
@@ -47,15 +47,15 @@ function doKeyDown(e) {
     switch(e.keyCode) {
         case 32:
                 jump();
-            break;
+        break;
         case 65:
             console.log("a")
             char.x -= 2
-            break;
+        break;
         case 68:
             console.log("d")
-            char.x += 2
-            break;
+            char.x += 20
+        break;
     };
 };
 //cool shit land
