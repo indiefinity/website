@@ -122,7 +122,8 @@ function pipe() {
                 pipe.y += 4
                 break;
         }
-        //to flood console, and debug i guess =>  console.log(pipe.y)
+        //to flood console, and debug i guess =>  console.log(pipe.y)'
+        if (getCookie("god") == 0) {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()} //Start scan
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
@@ -131,6 +132,7 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
         } //End scan
@@ -156,8 +158,10 @@ function fail() {
     g.fillStyle = "red"
     g.fillRect(0, 0, c.width, c.height)
     failed = true
+    if (getCookie("god") == 0) {
     if (Math.floor(score / 6) > highscore) {
         setCookie("highscore", Math.floor(score / 6 - 0.5), 9999)
+    }
     }
 }
 
