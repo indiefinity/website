@@ -13,7 +13,7 @@ img.onload = function(){
     bird = img
     //ctx.drawImage(img,0,0);
 };
-img.src = "./lataus.jpeg";  
+img.src = "./bird.png";  
 console.log("start!")
 pipe()
 var char = {"x":100,"y":200}
