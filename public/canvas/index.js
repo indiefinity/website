@@ -81,7 +81,7 @@ function pipe() {
         g2.fillStyle = "#0d7a23"
         g2.fillRect(pipe.x,0, 80, c.height)
         g2.clearRect(pipe.x, c2.height - pipe.y, 80, -150)
-        if (getCookie("god") == 0) {
+        if (getCookie("god") != 1) {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
@@ -125,7 +125,7 @@ function pipe() {
                 break;
         }
         //to flood console, and debug i guess =>  console.log(pipe.y)'
-        if (getCookie("god") == 0) {
+        if (getCookie("god") != 1) {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()} //Start scan
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
