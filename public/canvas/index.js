@@ -160,7 +160,7 @@ function fail() {
     g.fillStyle = "red"
     g.fillRect(0, 0, c.width, c.height)
     failed = true
-    if (getCookie("god") == 0) {
+    if (getCookie("god") != 1) {
     if (Math.floor(score / 6) > highscore) {
         setCookie("highscore", Math.floor(score / 6 - 0.5), 9999)
     }
