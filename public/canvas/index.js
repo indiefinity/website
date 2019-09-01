@@ -47,15 +47,15 @@ function doKeyDown(e) {
     switch(e.keyCode) {
         case 32:
                 jump();
-            break;
+        break;
         case 65:
             console.log("a")
             char.x -= 2
-            break;
+        break;
         case 68:
             console.log("d")
-            char.x += 2
-            break;
+            char.x += 20
+        break;
     };
 };
 //cool shit land
@@ -81,6 +81,7 @@ function pipe() {
         g2.fillStyle = "#0d7a23"
         g2.fillRect(pipe.x,0, 80, c.height)
         g2.clearRect(pipe.x, c2.height - pipe.y, 80, -150)
+        if (getCookie("god") != 1) {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
@@ -89,6 +90,7 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
         }
@@ -122,7 +124,8 @@ function pipe() {
                 pipe.y += 4
                 break;
         }
-        //to flood console, and debug i guess =>  console.log(pipe.y)
+        //to flood console, and debug i guess =>  console.log(pipe.y)'
+        if (getCookie("god") != 1) {
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y > pipe.y + 150) {fail()} //Start scan
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x > pipe.x && char.x < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
@@ -131,6 +134,7 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
         } //End scan
@@ -156,8 +160,10 @@ function fail() {
     g.fillStyle = "red"
     g.fillRect(0, 0, c.width, c.height)
     failed = true
+    if (getCookie("god") != 1) {
     if (Math.floor(score / 6) > highscore) {
         setCookie("highscore", Math.floor(score / 6 - 0.5), 9999)
+    }
     }
 }
 
