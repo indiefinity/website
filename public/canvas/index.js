@@ -95,7 +95,7 @@ function pipe() {
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
         }
-        pipe.x -= 1
+        pipe.x -= 80
         if (pipe.x < 0) {
             clearInterval(pipes)
         }
