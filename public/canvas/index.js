@@ -46,7 +46,8 @@ c.addEventListener( "keydown", doKeyDown, true);
 function doKeyDown(e) {
     switch(e.keyCode) {
         case 32:
-                jump();
+            sump ylöspäin saatanan homo
+                //jump();
         break;
         case 65:
             console.log("a")
