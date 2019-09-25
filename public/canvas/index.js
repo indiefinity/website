@@ -13,7 +13,7 @@ img.onload = function(){
     bird = img
     //ctx.drawImage(img,0,0);
 };
-img.src = "http://www.pngmart.com/files/6/Pigeon-PNG-Pic.png";
+img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU0j7K5S5Cz3lwnHG6bW0Dp-Ecoetz5Ff-pivCk2W3EMkckLw_Fg";
 img.width = 200
 img.height = 200
 console.log("start!")
