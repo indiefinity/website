@@ -47,8 +47,8 @@ window.addEventListener( "keypress", doKeyDown, false);
 c.addEventListener( "keydown", doKeyDown, true);
 function doKeyDown(e) {
     if (e == 32) { jump() }
-    if (e = 68) { char.x++ }
-    if (e = 65) { char.x-- }
+    if (e == 68) { char.x++ }
+    if (e == 65) { char.x-- }
 };
 //cool shit land
 function jump() {
