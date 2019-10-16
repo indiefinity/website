@@ -46,9 +46,12 @@ var gravity = setInterval(function() {
 window.addEventListener( "keypress", doKeyDown, false);
 c.addEventListener( "keydown", doKeyDown, true);
 function doKeyDown(e) {
-    if (e.keycode == 32) { jump() }
-    if (e.keycode == 68) { char.x++ }
-    if (e.keycode == 65) { char.x-- }
+    switch(e.keyCode) {
+        case 32:
+            //sump ylöspäin saatanan homo
+                jump();
+        break;
+    };
 };
 //cool shit land
 function jump() {
