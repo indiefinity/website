@@ -13,7 +13,8 @@ var playerlocationx = 100
 const c = document.getElementById('game');
 const g = c.getContext("2d");
 var main = setInterval(function() {
-c.width = c.width
+c.width = window.width
+
 g.fillStyle = "#000000"
 g.fillRect(playerlocationx, 100, 50, 50);
   if (key_left)
