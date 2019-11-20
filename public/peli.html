@@ -14,6 +14,7 @@ const c = document.getElementById('game');
 const g = c.getContext("2d");
 var main = setInterval(function() {
 c.width = window.innerWidth
+c.height = window.innerHeight
 
 g.fillStyle = "#000000"
 g.fillRect(playerlocationx, 100, 50, 50);
