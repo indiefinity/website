@@ -7,11 +7,6 @@
 <script>
 window.addEventListener('keydown', handleKeyDown, true)
 window.addEventListener('keyup', handleKeyUp, true)
-
-var maxspeed = 6;
-var xforce = 0;
-var pixelx = 0;
-var direction = 1;
 var key_left = false;
 var key_right = false;
 var playerlocationx = 100
@@ -23,29 +18,12 @@ g.fillStyle = "#000000"
 g.fillRect(playerlocationx, 100, 50, 50);
   if (key_left)
     {
-      xforce--;
-      direction = -1;
+      playerlocationx = playerlocationx - 1
     }
     if (key_right)
     {
-        xforce++;
-        direction = 1;
+        playerlocationx = playerlocationx + 1
     }
-    if (xforce > maxspeed)
-        xforce = maxspeed;
-    if (xforce < -maxspeed)
-        xforce = -maxspeed;
-    if (!key_left && !key_right)
-        {
-               pixelx = 0;
-               xforce = 0;
-        }
-    else
-        {      
-               pixelx += xforce;
-        }
-playerlocationx = playerlocationx + pixelx;
-playerdirection = direction;
 }, 100)
 function handleKeyDown(event)
     {
