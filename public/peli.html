@@ -9,7 +9,10 @@ window.addEventListener('keydown', handleKeyDown, true)
 window.addEventListener('keyup', handleKeyUp, true)
 var key_left = false;
 var key_right = false;
-var playerlocationx = 100
+var key_up = false;
+var key_down = false;
+var playerlocationx = 100;
+var playerlocationy = 100;
 const c = document.getElementById('game');
 const g = c.getContext("2d");
 var main = setInterval(function() {
@@ -17,7 +20,7 @@ c.width = window.innerWidth
 c.height = window.innerHeight
 
 g.fillStyle = "#000000"
-g.fillRect(playerlocationx, 100, 50, 50);
+g.fillRect(playerlocationx, playerlocationy, 50, 50);
   if (key_left)
     {
       playerlocationx = playerlocationx - 1
@@ -26,6 +29,14 @@ g.fillRect(playerlocationx, 100, 50, 50);
     {
         playerlocationx = playerlocationx + 1
     }
+  if (key_up)
+    {
+      playerlocationy = playerlocationy - 1
+    }
+    if (key_down)
+    {
+        playerlocationy = playerlocationy + 1
+    }
 }, 1)
 function handleKeyDown(event)
     {
@@ -33,6 +44,11 @@ function handleKeyDown(event)
                 key_left = true;
         else if (event.keyCode == 39)
             key_right = true;
+        else if (event.keyCode == 38) {
+                 key_up = false;//up 40 down
+           } else if (event.keyCode == 40) {
+             key_down = false;
+           }
     }
 
 function handleKeyUp(event)
@@ -41,5 +57,10 @@ function handleKeyUp(event)
                 key_left = false;
            else if (event.keyCode == 39)
                 key_right = false;
-    }
+           else if (event.keyCode == 38) {
+                 key_up = false;//up 40 down
+           } else if (event.keyCode == 40) {
+             key_down = false;
+           }
+           }
 </script>
