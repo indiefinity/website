@@ -21,6 +21,10 @@ function handleKeyDown(event)
     {
         if (event.keyCode == 82) {
                 char.y = 1;
-    }
+        
+        }
+        if (event.keyCode == 32) {
+            addUpwardsVelocity(char,1,0.96,0.01)
+        }
     }
 </script>
