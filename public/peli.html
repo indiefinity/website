@@ -4,6 +4,7 @@
 <body scroll="no">
 <canvas id="game" width="800" height="600"> </canvas>
 </body>
+<script src="https://raw.githubusercontent.com/indiefinity/physiclejs/master/physicle.js"></script>
 <script>
 window.addEventListener('keydown', handleKeyDown, true)
 window.addEventListener('keyup', handleKeyUp, true)
@@ -13,12 +14,14 @@ var key_up = false;
 var key_down = false;
 var playerlocationx = 100;
 var playerlocationy = 100;
+var char = {"x":0,"y":0}
 const c = document.getElementById('game');
 const g = c.getContext("2d");
 var main = setInterval(function() {
 c.width = window.innerWidth
 c.height = window.innerHeight
-
+gravity(char, 500, 0.98)
+playerlocationy = char.y
 g.fillStyle = "#000000"
 g.fillRect(playerlocationx, playerlocationy, 50, 50);
   if (key_left)
