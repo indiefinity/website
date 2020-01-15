@@ -8,10 +8,6 @@
 <script>
 window.addEventListener('keydown', handleKeyDown, true)
 window.addEventListener('keyup', handleKeyUp, true)
-var key_left = false;
-var key_right = false;
-var key_up = false;
-var key_down = false;
 var playerlocationx = 100;
 var playerlocationy = 100;
 var char = {"x":0,"y":1}
@@ -24,46 +20,11 @@ gravity(char, 500, 1.02)
 playerlocationy = char.y
 g.fillStyle = "#000000"
 g.fillRect(playerlocationx, playerlocationy, 50, 50);
-  if (key_left)
-    {
-      playerlocationx = playerlocationx - 1
-    }
-    if (key_right)
-    {
-        playerlocationx = playerlocationx + 1
-    }
-  if (key_up)
-    {
-      playerlocationy = playerlocationy - 1
-    }
-    if (key_down)
-    {
-        playerlocationy = playerlocationy + 1
-    }
 }, 1)
 function handleKeyDown(event)
     {
-        if (event.keyCode == 37) 
-                key_left = true;
-        else if (event.keyCode == 39)
-            key_right = true;
-        else if (event.keyCode == 38) {
-                 key_up = true;//up 40 down
-           } else if (event.keyCode == 40) {
-             key_down = true;
-           }
+        if (event.keyCode == 82) {
+                char.y = 1;
     }
-
-function handleKeyUp(event)
-    {
-           if (event.keyCode == 37) 
-                key_left = false;
-           else if (event.keyCode == 39)
-                key_right = false;
-           else if (event.keyCode == 38) {
-                 key_up = false;//up 40 down
-           } else if (event.keyCode == 40) {
-             key_down = false;
-           }
-           }
+    }
 </script>
