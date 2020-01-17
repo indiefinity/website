@@ -13,7 +13,7 @@ img.onload = function(){
     bird = img
     //ctx.drawImage(img,0,0);
 };
-img.src = "./bird.png";
+img.src = "./flappybird.png";
 img.width = 200
 img.height = 200
 console.log("start!")
