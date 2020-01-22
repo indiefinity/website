@@ -7,7 +7,7 @@ function next() {
     if (pepe == 3) { document.getElementById("pepe").style.backgroundColor = "orange" }
     if (pepe == 4) { document.getElementById("pepe").style.backgroundColor = "red" }
     if (pepe == 4) { pepe = 0 }
-    console.log(Math.Ceil(Math.random() * 10)
+    console.log(Math.Ceil(Math.random() * 10))
     
 }
 var main = setInterval(function(){
