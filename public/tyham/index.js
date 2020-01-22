@@ -12,4 +12,4 @@ function next() {
 var main = setInterval(function(){
     next()
     pepe += 1;
-}, 75)
+}, 1)
