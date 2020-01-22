@@ -14,8 +14,8 @@ img.onload = function(){
     //ctx.drawImage(img,0,0);
 };
 img.src = "./flappybird.png";
-img.width = 200
-img.height = 200
+img.width = 50
+img.height = 50
 console.log("start!")
 pipe()
 var char = {"x":100,"y":200}
