@@ -5,7 +5,7 @@ function decrypt(str) {
     for (c = 0; c < 29; c++) {
         result[c] = " "
     }
-    var a = str.toLowerCase().replace(/ /g, "").split('');
+    var a = str.toLowerCase().replace(/ /g, "_").split('');
     var stringlength = a.length
     var i;
     for (i = 0; i < stringlength; i++) {
