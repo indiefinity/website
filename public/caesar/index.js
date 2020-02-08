@@ -10,13 +10,16 @@ function decrypt(str) {
     var i;
     for (i = 0; i < stringlength; i++) {
         let workingletter = a[i]; // abcd EFGH
+        if (!workingletter == "_") {
         let b
         for (b = 0; b < 29; b++) {
             result[b] += wheel[wheel.indexOf(workingletter) + b]
         }
+        }
     }
     let d
     for (d = 0; d < 29; d++) {
+        result[d] = result[d].replace(/_/g, " ")
         result[d] = "<br>" + result[d]
     }
     document.getElementById("result").innerHTML = result;
