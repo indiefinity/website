@@ -5,16 +5,14 @@ function decrypt(str) {
     for (c = 0; c < 29; c++) {
         result[c] = " "
     }
-    var a = str.toLowerCase().split('');
+    var a = str.toLowerCase().replace(/ /g, "").split('');
     var stringlength = a.length
     var i;
     for (i = 0; i < stringlength; i++) {
         let workingletter = a[i]; // abcd EFGH
-        if (!workingletter == " ") {
         let b
         for (b = 0; b < 29; b++) {
             result[b] += wheel[wheel.indexOf(workingletter) + b]
-        }
         }
     }
     let d
