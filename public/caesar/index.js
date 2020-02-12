@@ -17,7 +17,7 @@ function decrypt(str) {
     }
     let d
     for (d = 0; d < 29; d++) {
-        result[d] = "<br>" + result[d]
+        result[d] = "<br>" + result[d] + " [" + d + "]"
     }
     document.getElementById("result").innerHTML = result;
 }
