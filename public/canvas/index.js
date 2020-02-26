@@ -86,7 +86,7 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (getCookie("charyhack") == 1) {
-            char.y = pipe.y + 50
+            char.y = pipe.y + 75
         }
         }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
@@ -133,7 +133,7 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
         if (getCookie("charyhack") == 1) {
-            char.y = pipe.y + 50
+            char.y = pipe.y + 75
         }
         }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
