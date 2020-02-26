@@ -184,3 +184,10 @@ function getCookie(cname) {
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
+function hack() {
+    if (document.getElementById('hack').value == "char.y") {
+        if (getCookie("charyhack") != 1) {
+        setCookie("charyhack", 1, 365)
+        } else { setCookie("charyhack", 0, 365) }
+    }
+}
