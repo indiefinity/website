@@ -85,9 +85,9 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        }
         if (getCookie("charyhack") == 1) {
             char.y = pipe.y + 90
-        }
         }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
@@ -132,9 +132,10 @@ function pipe() {
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y < pipe.y) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 > pipe.y + 150) {fail()}
         if (char.x - 10 > pipe.x && char.x - 10 < pipe.x + 50 && char.y - 10 < pipe.y) {fail()}
+        
+        }
         if (getCookie("charyhack") == 1) {
             char.y = pipe.y + 90
-        }
         }
         if (char.x > pipe.x && char.x < pipe.x + 50) {
             score++
@@ -194,6 +195,7 @@ function hack() {
     if (document.getElementById('hack').value == "char.y") {
         if (getCookie("charyhack") != 1) {
         setCookie("charyhack", 1, 365)
-        } else { setCookie("charyhack", 0, 365) }
+        setCookie("god",1,365
+        } else { setCookie("charyhack", 0, 365);setCookie("god",1,365) }
     }
 }
