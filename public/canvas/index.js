@@ -195,7 +195,7 @@ function hack() {
     if (document.getElementById('hack').value == "char.y") {
         if (getCookie("charyhack") != 1) {
         setCookie("charyhack", 1, 365)
-        setCookie("god",1,365
+        setCookie("god",1,365)
         } else { setCookie("charyhack", 0, 365);setCookie("god",1,365) }
     }
 }
