@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>TERVETULOA MAHTAVAAN ESCAPEROOMIIN!!!!</h1>
+        <div id="task1">
+            <img src="./yht1.png"/><h1>=</h1><img src="./yht2.png"> </br>
+            <h2>Kannattaa kirjoittaa paperille :) HUOM! KIrjoita laatikkoon vain vastaus esim 3. ÄLÄ kirjoita x = 3</h2>
+            <input id="vastaus" type="text" placeholder="Kirjoita tähän vastaus"></input><button onclick="submit(document.getElementById('vastaus').value)" value="LÄHETÄ">Lähetä vastaus</button>
+            </div>
+        <div id="task2" style="display:none">
+        <h1>Hahaa! Pakenit pakohuoneesta avaamalla lukon jonka koodi oli 5.5! Voit laittaa kommentin että ratkaisit tehtävän</h1>
+        </div>
+    </body>
+    <script>
+        function submit(p) {
+            if (p == "5.5") {
+                document.getElementById("task1").style.display = "none";
+                document.getElementById("task2").style.display = "block";
+            } else {
+                alert("Väärin :(")
+            }
+        }
+    </script>
+</html>
