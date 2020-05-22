@@ -1,2 +1,2 @@
 documet = document;
-c.heigth = c.heigth;
+c.heigth = c.height;
