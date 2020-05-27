@@ -28,15 +28,19 @@ function setup() {
     move() {
         if (this.x <= 900 && this.y <= 100) {
         this.x++
+        this.x++
         }
         if (this.x >= 900 && this.y <=900) {
+            this.y++
             this.y++
         }
         if (this.x >= 100 && this.y >= 900) {
             console.log("hi")
             this.x = this.x - 1
+            this.x = this.x - 1
         }
         if (this.x <= 100 && this.y <=900) {
+            this.y = this.y - 1
             this.y = this.y - 1
         }
 }
