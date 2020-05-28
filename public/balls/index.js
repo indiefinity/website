@@ -6,7 +6,9 @@ function setup() {
   
   function draw() {
     background(0);
+if (mouseIsPressed) {
     balls[balls.length] = new Ball(mouseX, mouseY)
+}
     for (let i = 0; i < balls.length; i++) {
         balls[i].draw();
     }
@@ -21,9 +23,9 @@ function setup() {
     draw() {
         colorMode(HSB);
         fill(this.color);
-        if (mouseIsPressed) {
+       
         circle(this.x, this.y, 2 * this.radius);
-}
+
     }
 
 }
