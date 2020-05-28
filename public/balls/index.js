@@ -21,8 +21,9 @@ function setup() {
     draw() {
         colorMode(HSB);
         fill(this.color);
+        if (mouseIsPressed) {
         circle(this.x, this.y, 2 * this.radius);
-
+}
     }
 
 }
