@@ -21,7 +21,7 @@ pipe()
 var char = {"x":100,"y":200}
 var main = setInterval(function() {
     c.width = c.width
-    bg.fillStyle = "#8fddff";
+    bg.fillStyle = "#8f4403";
     bg.fillRect(0, 0, canvas.width, canvas.height);
     g.fillStyle = "#000000"
     g.drawImage(bird, char.x, c.height - char.y,);
@@ -73,7 +73,7 @@ function pipe() {
     let pipe = {"x": 860, "y":r(100,450)}
     let pipes = setInterval(function() {
         c2.width = c2.width
-        g2.fillStyle = "#0d7a23"
+        g2.fillStyle = "#3d1f00"
         g2.fillRect(pipe.x,0, 80, c.height)
         g2.clearRect(pipe.x, c2.height - pipe.y, 80, -150)
         if (getCookie("god") != 1) {
@@ -103,7 +103,7 @@ function pipe() {
     let down = true
     let pipes = setInterval(function() {
         c2.width = c2.width
-        g2.fillStyle = "#0d7a23"
+        g2.fillStyle = "#ed7b18"
         g2.fillRect(pipe.x,0, 80, c.height)
         g2.clearRect(pipe.x, c2.height - pipe.y, 80, -150)
         if (pipe.y < 104) {
