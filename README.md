@@ -1,2 +1,6 @@
-# GitHub repository for sivusto.tk
-## honestly just ignore it
+
+
+# !! This repository contains [Vukmoji](https://github.com/Vukky123/vukmoji) !!
+Usage of Vukmoji without permission from [@Vukky123](https://github.com/Vukky123) is not allowed!! 
+
+# !! This repository is rarely maintained
